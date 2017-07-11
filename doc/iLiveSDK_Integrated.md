@@ -47,6 +47,6 @@ Build Settings -> Other Linker Flags -> -ObjC,如下图所示：
 1、//AppDelegate.m中导入头文件 #import <ILiveSDK/ILiveSDK.h>
 2、打印iLiveSDK版本号
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-NSLog(@"version = %@",[[ILiveSDK getInstance] getVersion]);
+    NSLog(@"version = %@",[[ILiveSDK getInstance] getVersion]);
 }
 ```
