@@ -3,10 +3,13 @@ iLiveSDK 提供了账号登录，音视频互动，文本互动等基础功能�
 
 ## SDK获取
 从下载的随心播工程中，获取各个SDK。
+
 SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 
 ## 随心播运行
+
 ** 解压SDK压缩包 **
+
 由于Github上有100MB文件上传限制，所以在随心播工程中将QAVSDK压缩后再上传的，要使随心播正常运行，请开发人员解压iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac/AVSDK.zip 到当前目录，解压后如下图所示:
 
 ![](http://mc.qcloudimg.com/static/img/e70b619d7c575b395680c4242f528f4f/image.png)
