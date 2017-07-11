@@ -19,7 +19,7 @@ SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 * 3、暂时**不**支持屏幕分享功能
 * 4、暂时**仅**支持Mac自带摄像头
 
-[更多版本更新信息]()
+[更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
 ## iLiveSDK导入
 
@@ -30,7 +30,7 @@ SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 工程中的 SuiXinBoForMac.dmg 是运行包，可直接运行
 
 ## API文档
-[API文档]()
+[API文档](https://zhaoyang21cn.github.io/iLiveSDK_Help/ios_help/)
 
 ## 错误码
 [错误码表](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/error.md)
