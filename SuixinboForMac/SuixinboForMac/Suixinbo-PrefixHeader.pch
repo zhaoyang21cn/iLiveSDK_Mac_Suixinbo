@@ -1,0 +1,33 @@
+//
+//  Suixinbo-PrefixHeader.pch
+//  SuixinboForMac
+//
+//  Created by wilderliao on 2017/6/7.
+//  Copyright © 2017年 Tencent. All rights reserved.
+//
+
+#ifndef Suixinbo_PrefixHeader_pch
+#define Suixinbo_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <AppKit/AppKit.h>
+
+#import <ImSDK/ImSDK.h>
+#import <QAVSDK/QAVSDK.h>
+
+//#import "ILiveCoreHeader.h"
+//#import "ILiveRoomLisenter.h"
+//#import "ILiveQualityData.h"
+#import <ILiveSDK/ILiveCoreHeader.h>
+#import <ILiveSDK/ILiveRoomLisenter.h>
+#import <ILiveSDK/ILiveQualityData.h>
+
+
+#import "ConstHeader.h"
+#import "SuixinboToolsHeader.h"
+#import "WebServiceHeader.h"
+#import "AppDelegate.h"
+
+#endif /* Suixinbo_PrefixHeader_pch */

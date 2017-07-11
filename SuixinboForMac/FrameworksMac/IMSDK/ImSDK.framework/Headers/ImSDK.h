@@ -1,0 +1,29 @@
+//
+//  ImSDK.h
+//  ImSDK
+//
+//  Created by bodeng on 24/3/15.
+//  Copyright (c) 2015 tencent. All rights reserved.
+//
+
+#ifndef ImSDK_ImSDK_h
+#define ImSDK_ImSDK_h
+
+#import "TIMComm.h"
+#import "TIMManager.h"
+#import "TIMMessage.h"
+#import "TIMManagerExt.h"
+#import "TIMConversation.h"
+#import "TIMGroupManager.h"
+#import "TIMFileManager.h"
+#import "TIMFriendshipManager.h"
+#import "TIMFriendshipProxy.h"
+#import "TIMGroupAssistant.h"
+
+#import "TIMRelay.h"
+
+#import "TIMAVMeasureSpeeder.h"
+
+#import "IMSdkInt.h"
+
+#endif
