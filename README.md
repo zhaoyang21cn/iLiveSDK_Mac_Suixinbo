@@ -32,7 +32,7 @@ SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 
 ## iLiveSDK导入
 
-[Mac版iLiveSDK导入参考在这里]()
+[Mac版iLiveSDK导入参考在这里](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_Integrated.md)
 
 ## API文档
 [API文档](https://zhaoyang21cn.github.io/iLiveSDK_Help/ios_help/)
