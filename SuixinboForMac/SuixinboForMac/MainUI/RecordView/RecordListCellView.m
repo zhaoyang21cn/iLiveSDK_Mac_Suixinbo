@@ -23,8 +23,118 @@
     _hostHeadImageView.layer.cornerRadius = _hostHeadImageView.frame.size.width/2;
     _hostHeadImageView.layer.borderColor = [NSColor grayColor].CGColor;
     _hostHeadImageView.layer.masksToBounds = YES;
+    _dateFormatter = [[NSDateFormatter alloc] init];
+    [_dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 }
 
+- (void)configWith:(RecordVideoItem *)item
+{
+    if (!item)
+    {
+        return;
+    }
+    _item = item;
+    __weak typeof(self)ws = self;
+    
+    //封面
+    [_recordCoverImageView setImage:[NSImage imageNamed:@"defaul_publishcover"]];
+    if (_item.cover && item.cover.length > 0) {
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:_item.cover]];
+        NSImage *image = [[NSImage alloc] initWithData:data];
+        [_recordCoverImageView setImage:image];
+    }
+    
+    //设置用户头像
+    [[TIMFriendshipManager sharedInstance] GetUsersProfile:@[item.uid] succ:^(NSArray *friends) {
+        if (friends.count <= 0)
+        {
+            return ;
+        }
+        TIMUserProfile *profile = friends[0];
+        if (profile.faceURL && profile.faceURL.length > 0)
+        {
+            NSURL *avatarUrl = [NSURL URLWithString:profile.faceURL];
+            NSImage *image = [[NSImage alloc] initWithContentsOfURL:avatarUrl];
+            if ([NSThread isMainThread])
+            {
+                [ws.hostHeadImageView setImage:image];
+            }
+            else
+            {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [ws.hostHeadImageView setImage:image];
+                });
+            }
+        }
+    } fail:nil];
+    [_hostHeadImageView setImage:[NSImage imageNamed:@"default_head"]];
+    
+    //录制文件名
+    [_recordTitleTF setStringValue:_item.name];
+    //录制用户名
+    [_hostNameTF setStringValue:_item.uid];
+    //录制时间
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[_item.createTime integerValue]];
+    NSString *timeStr = [self.dateFormatter stringFromDate:date];
+    [_recordTimeTF setStringValue:[NSString stringWithFormat:@"%@",timeStr]];
+    //录制时长
+    NSInteger duration = [_item.duration integerValue];
+    NSInteger sec = duration % 60;
+    NSInteger minu = (sec/60) % 60;
+    NSInteger hour = sec/3600;
+    if (hour>0)
+    {
+        NSString *showTime = [NSString stringWithFormat:@"%2ld小时%2ld分%2ld秒",hour,minu,sec];
+        [_recordDuration setStringValue:showTime];
+    }
+    else
+    {
+        if (minu>0)
+        {
+            NSString *showTime = [NSString stringWithFormat:@"%2ld分%2ld秒",minu,sec];
+            [_recordDuration setStringValue:showTime];
+        }
+        else
+        {
+            NSString *showTime = [NSString stringWithFormat:@"%2ld秒",sec];
+            [_recordDuration setStringValue:showTime];
+        }
+    }
+    //录制文件大小
+    if (_item.fileSize) {
+        NSString *size = [self convertFileSize:[_item.fileSize integerValue]];
+        [_recordSize setStringValue:size];
+    }
+}
+
+- (NSString *)convertFileSize:(long long)size
+{
+    long kb = 1024;
+    long mb = kb * 1024;
+    long gb = mb * 1024;
+    
+    if (size >= gb) {
+        return [NSString stringWithFormat:@"%.1fGB", (float) size / gb];
+    } else if (size >= mb) {
+        float f = (float) size / mb;
+        if (f > 100) {
+            return [NSString stringWithFormat:@"%.0fMB", f];
+        }else{
+            return [NSString stringWithFormat:@"%.1fMB", f];
+        }
+    } else if (size >= kb) {
+        float f = (float) size / kb;
+        if (f > 100) {
+            return [NSString stringWithFormat:@"%.0fKB", f];
+        }else{
+            return [NSString stringWithFormat:@"%.1fKB", f];
+        }
+    } else
+        return [NSString stringWithFormat:@"%lldB", size];
+}
+
+/*
+ //手动录制时，需要用到下面的代码解析
 - (void)configWith:(RecordVideoItem *)item;
 {
     if (!item)
@@ -165,5 +275,5 @@
         return snapshotPath;
     }
     return nil;
-}
+}*/
 @end

@@ -23,18 +23,24 @@
     _searchDatas = [NSMutableArray array];
     _pageItem = [[RequestPageParamItem alloc] init];
     _pageItem.pageIndex = 1;//录制列表页号是从1开始的
-    _pageItem.pageSize = 100;
+    _pageItem.pageSize = _numberTF.stringValue.length>0 ? [_numberTF.stringValue integerValue] : 15;
     
     [_recordListTableView setTarget:self];
     [_recordListTableView setDoubleAction:NSSelectorFromString(@"doubleClickRow:")]; //setDoubleAction双击选择事件
     
-    _searchTF.delegate = self;
+    _acountTF.stringValue = [[ILiveLoginManager getInstance] getLoginId];
+    _acountTF.delegate = self;
+    _numberTF.delegate = self;
     _isCanLoadMore = YES;
-    [self loadMore:nil];
+    [self reLoad:nil];
 }
 
-- (void)loadMore:(TCIVoidBlock)complete
+- (void)reLoad:(TCIVoidBlock)complete
 {
+    _pageItem.pageIndex = 1;
+    _pageItem.pageSize = _numberTF.stringValue.length>0 ? [_numberTF.stringValue integerValue] : 15;
+    [_datas removeAllObjects];
+    
     __weak typeof(self) ws = self;
     __weak RequestPageParamItem *wpi = _pageItem;
     RecordListRequest *recListReq = [[RecordListRequest alloc] initWithHandler:^(BaseRequest *request) {
@@ -56,10 +62,12 @@
     } failHandler:^(BaseRequest *request) {
         NSLog(@"fail");
     }];
+
     recListReq.token = [AppDelegate sharedInstance].token;
-    recListReq.type = 1;
+    recListReq.type = 0;
     recListReq.index = _pageItem.pageIndex;
     recListReq.size = _pageItem.pageSize;
+    recListReq.uid = _acountTF.stringValue ? _acountTF.stringValue : @"";
     [[WebServiceEngine sharedEngine] asyncRequest:recListReq wait:NO];
 }
 
@@ -67,12 +75,17 @@
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)commandSelector {
     NSString *str =  NSStringFromSelector(commandSelector);
     if ([str isEqualToString:@"insertNewline:"]) {
-        [self searchVideo:textView.string];
+        [self reLoad:nil];
     }
     return NO;
 }
 
-- (void)searchVideo:(NSString *)identifier {
+- (IBAction)onSearch:(NSButton *)sender {
+    [self reLoad:nil];
+}
+
+/*
+ - (void)searchVideo:(NSString *)identifier {
     if (identifier.length <= 0) {
         _isShowSearchData = NO;
         [_searchDatas removeAllObjects];
@@ -114,11 +127,12 @@
         NSLog(@"fail");
     }];
     recListReq.token = [AppDelegate sharedInstance].token;
-    recListReq.type = 1;
+    recListReq.type = 0;
     recListReq.index = index;
     recListReq.size = 100;
     [[WebServiceEngine sharedEngine] asyncRequest:recListReq wait:NO];
 }
+*/
 
 #pragma mark - table view delegate
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{

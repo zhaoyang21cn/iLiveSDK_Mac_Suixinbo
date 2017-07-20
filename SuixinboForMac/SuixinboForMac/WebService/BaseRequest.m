@@ -60,6 +60,7 @@
 
 - (NSString *)hostUrl
 {
+//    return @"https://sxb.qcloud.com/sxb_new/index.php?";
     return @"https://sxb.qcloud.com/sxb_dev/index.php?";
 }
 
@@ -130,12 +131,15 @@
                 else
                 {
                     dispatch_async(dispatch_get_main_queue(), ^{
-//                        TCILDebugLog(@"返回数据格式有误--> %@",respJsonObject);
+                        
+//                        [[HUDHelper sharedInstance] tipMessage:@"返回数据格式有误" delay:2 completion:^{
+                        TCILDebugLog(@"返回数据格式有误--> %@",respJsonObject);
                         // 说明返回内容有问题
                         if (_failHandler)
                         {
                             _failHandler(self);
                         }
+//                        }];
                         NSLog(@"==========[%@]开始解析响应完成>>>>>>>>>", self);
                     });
                 }
@@ -151,21 +155,27 @@
                     }
                     else
                     {
-//                        TCILDebugLog(@"返回的数据有业务错误--> %@",[_response message]);
+//                        [[HUDHelper sharedInstance] tipMessage:[_response message] delay:2 completion:^{
+                        TCILDebugLog(@"返回的数据有业务错误--> %@",[_response message]);
                         // 返回的数据有业务错误
                         if (_failHandler)
                         {
                             _failHandler(self);
                         }
+//                        }];
                     }
                     NSLog(@"==========[%@]开始解析响应完成>>>>>>>>>", self);
                 });
             }
+//            else
+//            {
+//                DebugLog(@"_succHandler 为空, 不解析");
+//            }
         });
     }
     else
     {
-//        TCILDebugLog(@"返回数据为空--> %@",[self class]);
+        TCILDebugLog(@"返回数据为空--> %@",[self class]);
         dispatch_async(dispatch_get_main_queue(), ^{
             // 说明返回内容有问题
             if (_failHandler)

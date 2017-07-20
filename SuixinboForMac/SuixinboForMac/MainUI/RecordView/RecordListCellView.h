@@ -13,8 +13,12 @@
 @property (strong) IBOutlet NSImageView *recordCoverImageView;
 @property (strong) IBOutlet NSTextField *recordTitleTF;
 @property (strong) IBOutlet NSTextField *recordTimeTF;
+@property (strong) IBOutlet NSTextField *recordDuration;
+@property (strong) IBOutlet NSTextField *recordSize;
 @property (strong) IBOutlet NSImageView *hostHeadImageView;
 @property (strong) IBOutlet NSTextField *hostNameTF;
+
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
 
 @property (nonatomic, strong) RecordVideoItem *item;
 - (void)configWith:(RecordVideoItem *)item;

@@ -136,6 +136,9 @@ typedef NSString *(^ILiveGroupIDFunc)(unsigned int roomid);
 /** 视频接收模式 */
 @property (nonatomic, assign) VideoRecvMode videoRecvMode;
 
+/** 屏幕分享接收模式*/
+@property (nonatomic, assign) ScreenRecvMode screenRecvMode;
+
 /**
  主播默认配置
 
@@ -147,6 +150,7 @@ typedef NSString *(^ILiveGroupIDFunc)(unsigned int roomid);
  autoSpeaker = YES;
  autoHdAudio = NO;
  videoRecvMode = VIDEO_RECV_MODE_SEMI_AUTO_RECV_CAMERA_VIDEO;
+ screenRecvMode = SCREEN_RECV_MODE_SEMI_AUTO_RECV_SCREEN_VIDEO;
  
  @return ILiveRoomAVOption
  */
@@ -162,6 +166,7 @@ typedef NSString *(^ILiveGroupIDFunc)(unsigned int roomid);
  autoSpeaker = YES;
  autoHdAudio = NO;
  videoRecvMode = VIDEO_RECV_MODE_SEMI_AUTO_RECV_CAMERA_VIDEO;
+ screenRecvMode = SCREEN_RECV_MODE_SEMI_AUTO_RECV_SCREEN_VIDEO;
  
  @return ILiveRoomAVOption
  */
@@ -185,6 +190,7 @@ typedef NSString *(^ILiveGroupIDFunc)(unsigned int roomid);
  autoSpeaker = YES;
  autoHdAudio = NO;
  videoRecvMode = VIDEO_RECV_MODE_SEMI_AUTO_RECV_CAMERA_VIDEO;
+ screenRecvMode = SCREEN_RECV_MODE_SEMI_AUTO_RECV_SCREEN_VIDEO;
  
  @return ILiveRoomAVOption
  */

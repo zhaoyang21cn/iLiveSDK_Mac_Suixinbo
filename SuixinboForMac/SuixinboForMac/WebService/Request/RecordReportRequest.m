@@ -22,9 +22,9 @@
     NSDictionary *dic = @{@"token" : _token,
                           @"roomnum" : [NSNumber numberWithInteger:_roomnum],
                           @"uid" : _uid,
-                          @"name" : _name ? _name : @"Mac_sxb_默认录制文件名",
+                          @"name" : _name,
                           @"type" : [NSNumber numberWithInteger:_type],
-                          @"cover":_cover ? _cover : @"",
+                          @"cover":_cover,
                           };
     return dic;
 }

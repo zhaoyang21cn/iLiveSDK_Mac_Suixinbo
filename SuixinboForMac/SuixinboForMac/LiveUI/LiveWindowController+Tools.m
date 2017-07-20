@@ -66,6 +66,7 @@
 
 - (void)sendCustomC2CMessage:(BOOL)isOnline recvId:(NSString *)recvId cmd:(ILVLiveIMCmd)cmd succ:(TCIVoidBlock)succ fail:(TCIErrorBlock)fail
 {
+    //消息组装
     //如果将nsdata类型作为dictionary的value，序列化会崩溃
     NSString *dataStr = @"";//[[NSString alloc] initWithData:msg.data encoding:NSUTF8StringEncoding];
     NSError *error;

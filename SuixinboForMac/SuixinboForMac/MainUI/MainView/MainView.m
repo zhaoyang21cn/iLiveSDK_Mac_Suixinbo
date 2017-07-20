@@ -135,16 +135,17 @@
         NSLog(@"fail");
     }];
     recListReq.token = [AppDelegate sharedInstance].token;
-    recListReq.type = 1;
+    recListReq.type = 0;
     recListReq.index = 1;
-    recListReq.size = 100;
+    recListReq.size =  _recordListView.numberTF.stringValue ? [_recordListView.numberTF.stringValue integerValue] : 15;
+    recListReq.uid = _recordListView.acountTF.stringValue ? _recordListView.acountTF.stringValue : @"";
     [[WebServiceEngine sharedEngine] asyncRequest:recListReq wait:NO];
 }
 
 #pragma mark - record list
 - (IBAction)onRecordList:(NSButton *)sender {
-    if ([sender.title isEqualToString:@"录制列表"]) {
-        [sender setTitle:@"直播列表"];
+    if ([sender.title isEqualToString:@"观看回放"]) {
+        [sender setTitle:@"返回"];
         if (!_recordListView) {
             NSArray *recordListObjects = [[NSArray alloc] init];;
             if ([[NSBundle mainBundle] loadNibNamed:@"RecordListView" owner:nil topLevelObjects:&recordListObjects]) {
@@ -162,7 +163,7 @@
         self.window.title = @"Mac随心播_录制列表";
     }
     else {
-        [sender setTitle:@"录制列表"];
+        [sender setTitle:@"观看回放"];
         _liveListTableView.hidden = NO;
         _recordListView.hidden = YES;
         self.window.title = @"Mac随心播_直播列表";
@@ -217,6 +218,7 @@
     NSString *version = [NSString stringWithFormat:@"%@%@%@",iliveSDKVer,imSDKVer,avSDKVer];
     [SuixinboAlert tipsWith:version];
 }
+
 
 #pragma mark - table view delegate
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{

@@ -62,9 +62,9 @@
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NCL-W2-rkj">
                             <rect key="frame" x="199" y="18" width="88" height="37"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="square" title="录制列表" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uwP-p4-f0b">
+                            <buttonCell key="cell" type="square" title="观看回放" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uwP-p4-f0b">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
+                                <font key="font" size="13" name=".PingFangSC-Regular"/>
                             </buttonCell>
                             <connections>
                                 <action selector="onRecordList:" target="c22-O7-iKe" id="59X-s2-ril"/>
@@ -92,18 +92,18 @@
                     <rect key="frame" x="13" y="0.0" width="615" height="400"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" ambiguous="YES" id="hRE-FN-OkT">
-                        <rect key="frame" x="1" y="1" width="613" height="398"/>
+                        <rect key="frame" x="1" y="0.0" width="613" height="399"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView identifier="LiveListTableViewID" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="100" rowSizeStyle="automatic" viewBased="YES" id="bKL-jC-XaP">
-                                <rect key="frame" x="0.0" y="0.0" width="613" height="398"/>
+                            <tableView identifier="LiveListTableViewID" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="100" rowSizeStyle="automatic" headerView="uH6-2M-Wjc" viewBased="YES" id="bKL-jC-XaP">
+                                <rect key="frame" x="0.0" y="0.0" width="613" height="376"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" red="0.52554401179999999" green="0.52554401179999999" blue="0.52554401179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <tableColumns>
                                     <tableColumn identifier="LiveListColumn0" width="610" minWidth="40" maxWidth="1000" id="qjq-CT-ynL">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="直播列表">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -194,6 +194,10 @@
                         <rect key="frame" x="224" y="17" width="15" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
+                    <tableHeaderView key="headerView" id="uH6-2M-Wjc">
+                        <rect key="frame" x="0.0" y="0.0" width="613" height="23"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tableHeaderView>
                 </scrollView>
             </subviews>
             <connections>

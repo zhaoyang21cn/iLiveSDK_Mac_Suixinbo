@@ -24,7 +24,6 @@
 
 @property (nonatomic, strong) NSString *roleName;
 
-
 - (NSDictionary *)toRoomDic;
 
 @end
@@ -63,6 +62,9 @@
 @property (nonatomic, copy) NSString *cover;
 @property (nonatomic, copy) NSString *videoId;
 @property (nonatomic, strong) NSMutableArray *playurl;
+@property (nonatomic, strong) NSString *createTime;//时间戳
+@property (nonatomic, strong) NSString *duration;//单位:秒
+@property (nonatomic, strong) NSString *fileSize;//单位：字节
 
 @end
 

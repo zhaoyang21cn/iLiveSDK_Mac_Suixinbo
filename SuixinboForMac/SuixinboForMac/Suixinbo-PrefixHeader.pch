@@ -17,12 +17,12 @@
 #import <ImSDK/ImSDK.h>
 #import <QAVSDK/QAVSDK.h>
 
-//#import "ILiveCoreHeader.h"
-//#import "ILiveRoomLisenter.h"
-//#import "ILiveQualityData.h"
-#import <ILiveSDK/ILiveCoreHeader.h>
-#import <ILiveSDK/ILiveRoomLisenter.h>
-#import <ILiveSDK/ILiveQualityData.h>
+#import "ILiveCoreHeader.h"
+#import "ILiveRoomLisenter.h"
+#import "ILiveQualityData.h"
+//#import <ILiveSDK/ILiveCoreHeader.h>
+//#import <ILiveSDK/ILiveRoomLisenter.h>
+//#import <ILiveSDK/ILiveQualityData.h>
 
 
 #import "ConstHeader.h"

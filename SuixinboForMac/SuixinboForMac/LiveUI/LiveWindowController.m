@@ -77,14 +77,15 @@
 }
 
 - (void)createRoom {
-    
+    //如果使用美颜sdk，需要设置本地画面代理，详情参考LiveWindowController+Beauty.m中的实现
     [[ILiveRoomManager getInstance] setLocalVideoDelegate:self];
     
+    //开发者可以详细了解下option的各个参数配置，这很重要
     ILiveRoomOption *option = [ILiveRoomOption defaultHostLiveOption];
-    option.controlRole = _item.info.roleName;
+    option.controlRole = _item.info.roleName;       //这里填写开发者自己的账号系统下的角色名
     option.avOption.autoMic = _config.isAutoOpenMic;
-    option.roomDisconnectListener = self;
-    option.memberStatusListener = self;
+    option.roomDisconnectListener = self;           //房间失去连接的回调通知
+    option.memberStatusListener = self;             //房间内用户的事件回调
     __weak typeof(self) ws = self;
     [[ILiveRoomManager getInstance] createRoom:(int)_item.info.roomnum option:option succ:^{
         NSLog(@"succ");
@@ -265,6 +266,8 @@
 }
 
 - (void)joinRoom {
+    //参数意义见创建房间
+    //用户成功加入房间后，如果打开摄像头，则会收到onEndpointsUpdateInfo回调，在onEndpointsUpdateInfo回调中，添加上渲染视图即可
     __weak typeof(self) ws = self;
     ILiveRoomOption *option = [ILiveRoomOption defaultGuestLiveOption];
     option.controlRole = _item.info.roleName;
@@ -551,7 +554,7 @@
             [ws insertMessageToUI:[NSString stringWithFormat:@"我: %@",elem.text]];
             ws.messageTF.stringValue = @"";
         } failed:^(NSString *module, int errId, NSString *errMsg) {
-            NSLog(@"stop record fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
+            NSLog(@"send message fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
             NSString *failInfo = [NSString stringWithFormat:@"stop record fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
             [ws insertMessageToUI:[NSString stringWithFormat:@"我: 消息发送失败.%@",failInfo]];
         }];
@@ -678,6 +681,8 @@
     }
     
     [[ILiveRoomManager getInstance] quitRoom:^{
+        int roomId = [[ILiveRoomManager getInstance] getRoomId];
+        NSLog(@"%d",roomId);
         [ws.item cleanLocalData];
         [ws.window close];
     } failed:^(NSString *module, int errId, NSString *errMsg) {

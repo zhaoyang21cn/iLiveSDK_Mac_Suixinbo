@@ -21,8 +21,10 @@
 
 @property (nonatomic, assign) BOOL isShowSearchData;//显示查找数据还是全部数据
 
-@property (strong) IBOutlet NSTextField *searchTF;
+@property (strong) IBOutlet NSTextField *acountTF;
+@property (strong) IBOutlet NSTextField *numberTF;
 @property (strong) IBOutlet NSTableView *recordListTableView;//录制列表
+
 
 - (void)config;
 @end

@@ -63,7 +63,7 @@
     
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     
-    NSString *useridKey = @"todo";//[NSString stringWithFormat:@"LiveListItem_%@", [[ILiveLoginManager getInstance] getLoginId]];
+    NSString *useridKey = [NSString stringWithFormat:@"LiveListItem_%@", [[ILiveLoginManager getInstance] getLoginId]];
     
     [ud setObject:listItemDic forKey:useridKey];
 }
@@ -72,7 +72,7 @@
 {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     
-    NSString *useridKey = @"todo";//[NSString stringWithFormat:@"LiveListItem_%@", [[ILiveLoginManager getInstance] getLoginId]];
+    NSString *useridKey = [NSString stringWithFormat:@"LiveListItem_%@", [[ILiveLoginManager getInstance] getLoginId]];
     
     [ud setObject:nil forKey:useridKey];
 }
@@ -80,7 +80,7 @@
 + (instancetype)loadFromToLocal
 {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    NSString *useridKey = @"todo";//[NSString stringWithFormat:@"LiveListItem_%@", [[ILiveLoginManager getInstance] getLoginId]];
+    NSString *useridKey = [NSString stringWithFormat:@"LiveListItem_%@", [[ILiveLoginManager getInstance] getLoginId]];
     if (useridKey)
     {
         NSDictionary *listItemDic = [ud dictionaryForKey:useridKey];
