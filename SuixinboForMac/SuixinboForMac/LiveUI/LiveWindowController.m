@@ -86,6 +86,7 @@
     option.avOption.autoMic = _config.isAutoOpenMic;
     option.roomDisconnectListener = self;           //房间失去连接的回调通知
     option.memberStatusListener = self;             //房间内用户的事件回调
+    option.firstFrameListener = self;               //首帧画面监听
     __weak typeof(self) ws = self;
     [[ILiveRoomManager getInstance] createRoom:(int)_item.info.roomnum option:option succ:^{
         NSLog(@"succ");
@@ -850,5 +851,14 @@
         [ws onExitLive:nil];
     }];
     return YES;
+}
+
+//首帧画面来时，设置一下美颜和美白
+- (void)onFirstFrameRecved:(int)width height:(int)height identifier:(NSString *)identifier srcType:(avVideoSrcType)srcType {
+    int value = _beautyValueTF.intValue;
+    [_tilFilter setBeautyLevel:value];
+    
+    value = _whiteValueTF.intValue;
+    [_tilFilter setWhitenessLevel:value];
 }
 @end

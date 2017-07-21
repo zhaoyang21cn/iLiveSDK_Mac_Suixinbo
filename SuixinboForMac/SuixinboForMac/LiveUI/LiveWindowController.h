@@ -14,7 +14,7 @@
 /**
  直播控制器（本类内容比较多，分成多个模块，每个模块对应相应的扩展类，要查看哪个模块，可以直接去看对应的扩展类）
  */
-@interface LiveWindowController : NSWindowController<NSTextFieldDelegate,QAVRemoteVideoDelegate,ILiveRoomDisconnectListener>
+@interface LiveWindowController : NSWindowController<NSTextFieldDelegate,QAVRemoteVideoDelegate,ILiveRoomDisconnectListener,ILiveFirstFrameListener>
 
 //右侧方向UI
 @property (strong) IBOutlet NSTableView *memberTableView;//成员列表
