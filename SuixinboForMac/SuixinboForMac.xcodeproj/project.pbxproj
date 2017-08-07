@@ -23,7 +23,14 @@
 		9B9F09821F015B0200DF7B40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9F09801F015B0200DF7B40 /* Main.storyboard */; };
 		9B9F098B1F015C2500DF7B40 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F09891F015C2500DF7B40 /* MainWindowController.m */; };
 		9B9F098C1F015C2500DF7B40 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9F098A1F015C2500DF7B40 /* MainWindowController.xib */; };
-		9BB03B641F382FDD003537E3 /* ILiveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB03B631F382FDD003537E3 /* ILiveSDK.framework */; };
+		9BB03BBB1F389F8D003537E3 /* QAVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB03BB11F389F8D003537E3 /* QAVSDK.framework */; };
+		9BB03BBC1F389F8D003537E3 /* xplatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB03BB21F389F8D003537E3 /* xplatform.framework */; };
+		9BB03BBD1F389F8D003537E3 /* ILiveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB03BB41F389F8D003537E3 /* ILiveSDK.framework */; };
+		9BB03BBE1F389F8D003537E3 /* TILFilterSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB03BB51F389F8D003537E3 /* TILFilterSDK.framework */; };
+		9BB03BBF1F389F8D003537E3 /* IMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB03BB71F389F8D003537E3 /* IMCore.framework */; };
+		9BB03BC01F389F8D003537E3 /* ImSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB03BB81F389F8D003537E3 /* ImSDK.framework */; };
+		9BB03BC11F389F8D003537E3 /* QALSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB03BB91F389F8D003537E3 /* QALSDK.framework */; };
+		9BB03BC21F389F8D003537E3 /* TLSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB03BBA1F389F8D003537E3 /* TLSSDK.framework */; };
 		9BB67B371F3353150048275B /* MemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB67B361F3353150048275B /* MemberCell.xib */; };
 		9BC0CDF91EE687F1005B42BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0CDF81EE687F1005B42BA /* AppDelegate.m */; };
 		9BC0CDFC1EE687F1005B42BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0CDFB1EE687F1005B42BA /* main.m */; };
@@ -76,13 +83,6 @@
 		9BCF68FF1EF7845D002E9699 /* LiveWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCF68ED1EF7845D002E9699 /* LiveWindowController.xib */; };
 		9BCF69001EF7845D002E9699 /* RenderViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF68EF1EF7845D002E9699 /* RenderViewManager.m */; };
 		9BE92E231F0BCF860054121E /* LiveWindowController+Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE92E221F0BCF860054121E /* LiveWindowController+Audio.m */; };
-		9BE93FB01F13603E00B98073 /* QAVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE93FA81F13603E00B98073 /* QAVSDK.framework */; };
-		9BE93FB11F13603E00B98073 /* xplatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE93FA91F13603E00B98073 /* xplatform.framework */; };
-		9BE93FB21F13603E00B98073 /* IMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE93FAB1F13603E00B98073 /* IMCore.framework */; };
-		9BE93FB31F13603E00B98073 /* ImSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE93FAC1F13603E00B98073 /* ImSDK.framework */; };
-		9BE93FB41F13603E00B98073 /* QALSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE93FAD1F13603E00B98073 /* QALSDK.framework */; };
-		9BE93FB51F13603E00B98073 /* TLSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE93FAE1F13603E00B98073 /* TLSSDK.framework */; };
-		9BE9407B1F13B1C200B98073 /* TILFilterSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE940791F13B1C200B98073 /* TILFilterSDK.framework */; };
 		9BEB081B1EE979E900411B30 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BEB081A1EE979E900411B30 /* QuartzCore.framework */; };
 		9BF8926E1EFE57E40087715A /* LiveWindowController+MemberList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8926D1EFE57E40087715A /* LiveWindowController+MemberList.m */; };
 		9BF892711EFE5B5D0087715A /* MemberCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF892701EFE5B5D0087715A /* MemberCellView.m */; };
@@ -116,7 +116,14 @@
 		9B9F09881F015C2500DF7B40 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		9B9F09891F015C2500DF7B40 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		9B9F098A1F015C2500DF7B40 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
-		9BB03B631F382FDD003537E3 /* ILiveSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ILiveSDK.framework; sourceTree = "<group>"; };
+		9BB03BB11F389F8D003537E3 /* QAVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QAVSDK.framework; sourceTree = "<group>"; };
+		9BB03BB21F389F8D003537E3 /* xplatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = xplatform.framework; sourceTree = "<group>"; };
+		9BB03BB41F389F8D003537E3 /* ILiveSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ILiveSDK.framework; sourceTree = "<group>"; };
+		9BB03BB51F389F8D003537E3 /* TILFilterSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TILFilterSDK.framework; sourceTree = "<group>"; };
+		9BB03BB71F389F8D003537E3 /* IMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMCore.framework; sourceTree = "<group>"; };
+		9BB03BB81F389F8D003537E3 /* ImSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImSDK.framework; sourceTree = "<group>"; };
+		9BB03BB91F389F8D003537E3 /* QALSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QALSDK.framework; sourceTree = "<group>"; };
+		9BB03BBA1F389F8D003537E3 /* TLSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TLSSDK.framework; sourceTree = "<group>"; };
 		9BB67B361F3353150048275B /* MemberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberCell.xib; sourceTree = "<group>"; };
 		9BC0CDF41EE687F1005B42BA /* SuixinboForMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuixinboForMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC0CDF71EE687F1005B42BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -213,13 +220,6 @@
 		9BCF68EF1EF7845D002E9699 /* RenderViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderViewManager.m; sourceTree = "<group>"; };
 		9BE92E211F0BCF860054121E /* LiveWindowController+Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LiveWindowController+Audio.h"; sourceTree = "<group>"; };
 		9BE92E221F0BCF860054121E /* LiveWindowController+Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LiveWindowController+Audio.m"; sourceTree = "<group>"; };
-		9BE93FA81F13603E00B98073 /* QAVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QAVSDK.framework; sourceTree = "<group>"; };
-		9BE93FA91F13603E00B98073 /* xplatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = xplatform.framework; sourceTree = "<group>"; };
-		9BE93FAB1F13603E00B98073 /* IMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMCore.framework; sourceTree = "<group>"; };
-		9BE93FAC1F13603E00B98073 /* ImSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImSDK.framework; sourceTree = "<group>"; };
-		9BE93FAD1F13603E00B98073 /* QALSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QALSDK.framework; sourceTree = "<group>"; };
-		9BE93FAE1F13603E00B98073 /* TLSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TLSSDK.framework; sourceTree = "<group>"; };
-		9BE940791F13B1C200B98073 /* TILFilterSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TILFilterSDK.framework; sourceTree = "<group>"; };
 		9BEB081A1EE979E900411B30 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9BF8926C1EFE57E40087715A /* LiveWindowController+MemberList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LiveWindowController+MemberList.h"; sourceTree = "<group>"; };
 		9BF8926D1EFE57E40087715A /* LiveWindowController+MemberList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LiveWindowController+MemberList.m"; sourceTree = "<group>"; };
@@ -234,25 +234,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BE93FB41F13603E00B98073 /* QALSDK.framework in Frameworks */,
+				9BB03BC11F389F8D003537E3 /* QALSDK.framework in Frameworks */,
 				9B38A3C51F0F910600200FF1 /* libstdc++.6.tbd in Frameworks */,
 				9BEB081B1EE979E900411B30 /* QuartzCore.framework in Frameworks */,
-				9BE93FB31F13603E00B98073 /* ImSDK.framework in Frameworks */,
-				9BE93FB11F13603E00B98073 /* xplatform.framework in Frameworks */,
-				9BE93FB01F13603E00B98073 /* QAVSDK.framework in Frameworks */,
-				9BE93FB51F13603E00B98073 /* TLSSDK.framework in Frameworks */,
 				9BC0CE8D1EE81CB8005B42BA /* libiconv.tbd in Frameworks */,
 				9BC0CE921EE81CB8005B42BA /* libz.tbd in Frameworks */,
+				9BB03BC01F389F8D003537E3 /* ImSDK.framework in Frameworks */,
+				9BB03BBC1F389F8D003537E3 /* xplatform.framework in Frameworks */,
+				9BB03BBE1F389F8D003537E3 /* TILFilterSDK.framework in Frameworks */,
+				9BB03BC21F389F8D003537E3 /* TLSSDK.framework in Frameworks */,
 				9BC0CE881EE81CB8005B42BA /* CoreTelephony.framework in Frameworks */,
-				9BE9407B1F13B1C200B98073 /* TILFilterSDK.framework in Frameworks */,
 				9BC0CE8F1EE81CB8005B42BA /* libsqlite3.tbd in Frameworks */,
+				9BB03BBB1F389F8D003537E3 /* QAVSDK.framework in Frameworks */,
 				9BC0CE8C1EE81CB8005B42BA /* libc++.tbd in Frameworks */,
-				9BE93FB21F13603E00B98073 /* IMCore.framework in Frameworks */,
-				9BB03B641F382FDD003537E3 /* ILiveSDK.framework in Frameworks */,
 				9BC0CE8E1EE81CB8005B42BA /* libresolv.9.tbd in Frameworks */,
+				9BB03BBF1F389F8D003537E3 /* IMCore.framework in Frameworks */,
 				9BC0CE8A1EE81CB8005B42BA /* Foundation.framework in Frameworks */,
 				9BC0CE8B1EE81CB8005B42BA /* SystemConfiguration.framework in Frameworks */,
 				9BC0CE891EE81CB8005B42BA /* CoreWLAN.framework in Frameworks */,
+				9BB03BBD1F389F8D003537E3 /* ILiveSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +327,38 @@
 			);
 			path = RecordView;
 			sourceTree = "<group>";
+		};
+		9BB03BB01F389F8D003537E3 /* AVSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9BB03BB11F389F8D003537E3 /* QAVSDK.framework */,
+				9BB03BB21F389F8D003537E3 /* xplatform.framework */,
+			);
+			name = AVSDK;
+			path = FrameworksMac/AVSDK;
+			sourceTree = SOURCE_ROOT;
+		};
+		9BB03BB31F389F8D003537E3 /* ILiveSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9BB03BB41F389F8D003537E3 /* ILiveSDK.framework */,
+				9BB03BB51F389F8D003537E3 /* TILFilterSDK.framework */,
+			);
+			name = ILiveSDK;
+			path = FrameworksMac/ILiveSDK;
+			sourceTree = SOURCE_ROOT;
+		};
+		9BB03BB61F389F8D003537E3 /* IMSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9BB03BB71F389F8D003537E3 /* IMCore.framework */,
+				9BB03BB81F389F8D003537E3 /* ImSDK.framework */,
+				9BB03BB91F389F8D003537E3 /* QALSDK.framework */,
+				9BB03BBA1F389F8D003537E3 /* TLSSDK.framework */,
+			);
+			name = IMSDK;
+			path = FrameworksMac/IMSDK;
+			sourceTree = SOURCE_ROOT;
 		};
 		9BC0CDEB1EE687F1005B42BA = {
 			isa = PBXGroup;
@@ -541,33 +573,12 @@
 		9BE93FA61F13603E00B98073 /* FrameworksMac */ = {
 			isa = PBXGroup;
 			children = (
-				9BB03B631F382FDD003537E3 /* ILiveSDK.framework */,
-				9BE940791F13B1C200B98073 /* TILFilterSDK.framework */,
-				9BE93FA71F13603E00B98073 /* AVSDK */,
-				9BE93FAA1F13603E00B98073 /* IMSDK */,
+				9BB03BB01F389F8D003537E3 /* AVSDK */,
+				9BB03BB31F389F8D003537E3 /* ILiveSDK */,
+				9BB03BB61F389F8D003537E3 /* IMSDK */,
 			);
 			name = FrameworksMac;
 			path = ../FrameworksMac;
-			sourceTree = "<group>";
-		};
-		9BE93FA71F13603E00B98073 /* AVSDK */ = {
-			isa = PBXGroup;
-			children = (
-				9BE93FA81F13603E00B98073 /* QAVSDK.framework */,
-				9BE93FA91F13603E00B98073 /* xplatform.framework */,
-			);
-			path = AVSDK;
-			sourceTree = "<group>";
-		};
-		9BE93FAA1F13603E00B98073 /* IMSDK */ = {
-			isa = PBXGroup;
-			children = (
-				9BE93FAB1F13603E00B98073 /* IMCore.framework */,
-				9BE93FAC1F13603E00B98073 /* ImSDK.framework */,
-				9BE93FAD1F13603E00B98073 /* QALSDK.framework */,
-				9BE93FAE1F13603E00B98073 /* TLSSDK.framework */,
-			);
-			path = IMSDK;
 			sourceTree = "<group>";
 		};
 		9BEB08171EE9791000411B30 /* Frameworks */ = {
@@ -827,6 +838,9 @@
 					"$(SRCROOT)/../FrameworksMac",
 					"$(SRCROOT)/../FrameworksMac/AVSDK",
 					"$(SRCROOT)/../FrameworksMac/IMSDK",
+					"$(PROJECT_DIR)/FrameworksMac/AVSDK",
+					"$(PROJECT_DIR)/FrameworksMac/ILiveSDK",
+					"$(PROJECT_DIR)/FrameworksMac/IMSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SuixinboForMac/Suixinbo-PrefixHeader.pch";
@@ -856,6 +870,9 @@
 					"$(SRCROOT)/../FrameworksMac",
 					"$(SRCROOT)/../FrameworksMac/AVSDK",
 					"$(SRCROOT)/../FrameworksMac/IMSDK",
+					"$(PROJECT_DIR)/FrameworksMac/AVSDK",
+					"$(PROJECT_DIR)/FrameworksMac/ILiveSDK",
+					"$(PROJECT_DIR)/FrameworksMac/IMSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SuixinboForMac/Suixinbo-PrefixHeader.pch";
