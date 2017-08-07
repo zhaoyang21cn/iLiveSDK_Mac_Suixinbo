@@ -22,11 +22,8 @@ SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 
 ## SDK最近更新说明
 
-###### V1.5.1(2017-7-11)
-* 1、MacOS 平台第一个版本
-* 2、对齐iOS平台绝大部分功能
-* 3、暂时**不**支持屏幕分享功能
-* 4、暂时**仅**支持Mac自带摄像头
+###### V1.6.0.11371(2017-8-7)
+* 1、MacOS 平台增加屏幕分享能力
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
