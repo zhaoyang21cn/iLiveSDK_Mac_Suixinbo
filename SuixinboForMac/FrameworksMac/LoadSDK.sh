@@ -14,12 +14,12 @@ ls |grep -v LoadSDK.sh |xargs rm -rf
 #rm -rf !(down.sh|test.sh)
 
 #下载sdk zip文件
-echo "|-------------------------------download ILiveSDK-------------------------------|"
-curl -o ILiveSDK.zip "http://dldir1.qq.com/hudongzhibo/ILiveSDK/$ILiveSDKVersion.zip" --retry 5
-echo "|-------------------------------download IMSDK----------------------------------|"
-curl -o IMSDK.zip "http://dldir1.qq.com/hudongzhibo/ILiveSDK/$IMSDKSDKVersion.zip" --retry 5
 echo "|-------------------------------download AVSDK----------------------------------|"
 curl -o AVSDK.zip "http://dldir1.qq.com/hudongzhibo/ILiveSDK/$AVSDKVersion.zip" --retry 5
+echo "|-------------------------------download IMSDK----------------------------------|"
+curl -o IMSDK.zip "http://dldir1.qq.com/hudongzhibo/ILiveSDK/$IMSDKSDKVersion.zip" --retry 5
+echo "|-------------------------------download ILiveSDK-------------------------------|"
+curl -o ILiveSDK.zip "http://dldir1.qq.com/hudongzhibo/ILiveSDK/$ILiveSDKVersion.zip" --retry 5
 
 echo "|-------------------------------download Successful-----------------------------|"
 
