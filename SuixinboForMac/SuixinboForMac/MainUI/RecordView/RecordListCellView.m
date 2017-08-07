@@ -80,8 +80,8 @@
     //录制时长
     NSInteger duration = [_item.duration integerValue];
     NSInteger sec = duration % 60;
-    NSInteger minu = (sec/60) % 60;
-    NSInteger hour = sec/3600;
+    NSInteger minu = (duration/60) % 60;
+    NSInteger hour = duration/3600;
     if (hour>0)
     {
         NSString *showTime = [NSString stringWithFormat:@"%2ld小时%2ld分%2ld秒",hour,minu,sec];
@@ -100,6 +100,7 @@
             [_recordDuration setStringValue:showTime];
         }
     }
+    
     //录制文件大小
     if (_item.fileSize) {
         NSString *size = [self convertFileSize:[_item.fileSize integerValue]];

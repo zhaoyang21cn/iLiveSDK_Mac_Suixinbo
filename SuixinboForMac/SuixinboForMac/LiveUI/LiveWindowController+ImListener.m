@@ -42,6 +42,10 @@
                 [self onRecvInviteMsg:msg.sender];
                 break;
             case AVIMCMD_Multi_Interact_Refuse:
+            {
+                NSString *log = [NSString stringWithFormat:@"%@拒绝了你的连麦邀请",msg.sender];
+                [self addLog:log];
+            }
                 break;
             case AVIMCMD_Multi_Host_CancelInvite:
             {
@@ -52,7 +56,13 @@
                 NSString *recvId = (NSString *)[dataDic objectForKey:kMsgDataKey];
                 NSString *selfId = [[ILiveLoginManager getInstance] getLoginId];
                 if ([recvId isEqualToString:selfId]) {
-                    [self downCameraVideo:nil fail:nil];
+//                    [self downCameraVideo:nil fail:nil];
+                    __weak typeof(self) ws = self;
+                    [self downCameraVideo:^{
+                        [ws setGuestUI];
+                    } fail:^(NSString *module, int errId, NSString *errMsg) {
+                        [ws setGuestUI];
+                    }];
                 }
             }
                 break;
@@ -62,6 +72,12 @@
 //            case ILVLIVE_IMCMD_CUSTOM_LOW_LIMIT:
 //                [self onRecvLimitMsg:dataDic];
 //                break;
+            case AVIMCMD_EnterLive:
+            {
+                NSString *log = [NSString stringWithFormat:@"%@加入房间",msg.sender];
+                [self addLog:log];
+            }
+                break;
             default:
                 break;
         }
@@ -79,18 +95,31 @@
     [self addLog:[NSString stringWithFormat:@"recvMsg:收到%@的连麦邀请",sender]];
     NSAlert *alert = [[NSAlert alloc] init];
     [alert addButtonWithTitle:@"上麦"];
-    [alert addButtonWithTitle:@"忽略"];
+    [alert addButtonWithTitle:@"拒绝"];
     [alert setMessageText:[NSString stringWithFormat:@"收到来自%@的连麦邀请",sender]];
     [alert setAlertStyle:NSAlertStyleInformational];
     NSView *view = [[NSView alloc] initWithFrame:NSMakeRect(0,0,210,1)];
     [alert setAccessoryView:view];
-    if ([alert runModal] == NSAlertFirstButtonReturn)
-    {
+    NSModalResponse response = [alert runModal];
+    if (response == NSAlertFirstButtonReturn) {
         __weak typeof(self) ws = self;
         [self upCameraVideo:^{
             [ws setUpVideoUI];
         } fail:nil];
     }
+    else if (response == NSAlertSecondButtonReturn) {//拒绝
+        [self rejectToVideo:sender];
+    }
+}
+
+//拒绝上麦
+- (void)rejectToVideo:(id)sender
+{
+    [self sendCustomC2CMessage:NO recvId:sender cmd:(ILVLiveIMCmd)AVIMCMD_Multi_Interact_Refuse succ:^{
+        NSLog(@"reject succ");
+    } fail:^(NSString *module, int errId, NSString *errMsg) {
+        NSLog(@"reject fail");
+    }];
 }
 
 - (void)onRecvLimitMsg:(NSDictionary *)dataDic

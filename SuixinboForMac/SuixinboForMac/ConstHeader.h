@@ -13,6 +13,10 @@
 #define SuixinboSdkAppId       1400027849
 #define SuixinboAccountType    11656
 
+//#define SuixinboSdkAppId       1104062745
+//#define SuixinboAccountType    107
+//#define TestRoomNum            801234
+
 /******************** role string **********************/
 //#define kSxbRole_Host       @"LiveMaster"
 #define kSxbRole_HostHD     @"HD"

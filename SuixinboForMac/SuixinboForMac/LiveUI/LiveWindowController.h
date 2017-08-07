@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import <TILFilterSDK/TILFilter.h>
 #import "RoomInfoWindowController.h"
+#import "PushParamWindowController.h"
+#import "ScreenShareWindowController.h"
 
 @class LiveRommConfig;
 /**
@@ -39,11 +41,14 @@
 @property (strong) IBOutlet NSSlider *whiteSlider;       //美白
 @property (strong) IBOutlet NSTextField *whiteValueTF;
 
-@property (strong) IBOutlet NSComboBox *pushTypeComboBox; //推流
-@property (strong) IBOutlet NSButton *startPushBtn;
+@property (strong) IBOutlet NSButton *startPushBtn;//推流
+@property (strong) PushParamWindowController *pushParamWC;
 
-@property (strong) IBOutlet NSTextField *recordFileNameTF;//录制
-@property (strong) IBOutlet NSButton *startRecordBtn;
+@property (strong) IBOutlet NSButton *startRecordBtn;//录制
+
+@property (strong) IBOutlet NSButton *screenShareBtn;//屏幕分享
+@property (strong) ScreenShareWindowController *screenShareWC;
+
 
 @property (strong) IBOutlet NSPopUpButton *roleSwitchPopUpBtn;
 @property (strong) IBOutlet NSButton *roleSwitchBtn;      //切换角色（切换分辨率）

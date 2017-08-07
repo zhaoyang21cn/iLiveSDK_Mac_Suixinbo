@@ -38,6 +38,8 @@
     
     _memberTableView.delegate = self;
     _memberTableView.dataSource = self;
+    NSNib *memNib = [[NSNib alloc] initWithNibNamed:@"MemberCell" bundle:nil];
+    [_memberTableView registerNib:memNib forIdentifier:@"MemberCellViewID"];
     
     _messageTF.delegate = self;
     
@@ -53,6 +55,9 @@
 - (void)initLive{
     [[[ILiveSDK getInstance] getTIMManager] addMessageListener:self];
     [[[ILiveSDK getInstance] getAVContext].audioCtrl setAudioDataEventDelegate:self];
+    //如果使用美颜sdk，需要设置本地画面代理，详情参考LiveWindowController+Beauty.m中的实现
+    [[ILiveRoomManager getInstance] setLocalVideoDelegate:self];
+    
 //    [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_VoiceDispose];
 //    [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_Play];
     //uninit todo
@@ -77,8 +82,6 @@
 }
 
 - (void)createRoom {
-    //如果使用美颜sdk，需要设置本地画面代理，详情参考LiveWindowController+Beauty.m中的实现
-    [[ILiveRoomManager getInstance] setLocalVideoDelegate:self];
     
     //开发者可以详细了解下option的各个参数配置，这很重要
     ILiveRoomOption *option = [ILiveRoomOption defaultHostLiveOption];
@@ -88,6 +91,7 @@
     option.memberStatusListener = self;             //房间内用户的事件回调
     option.firstFrameListener = self;               //首帧画面监听
     __weak typeof(self) ws = self;
+//    _item.info.roomnum = 801234;
     [[ILiveRoomManager getInstance] createRoom:(int)_item.info.roomnum option:option succ:^{
         NSLog(@"succ");
         if (option.avOption.autoCamera) {
@@ -146,15 +150,14 @@
     }
     
     [_micSlider setContinuous:YES];
-    _micSlider.intValue = [[ILiveSDK getInstance] getAVContext].audioCtrl.volume;
-    _volume = [[ILiveSDK getInstance] getAVContext].audioCtrl.volume;
+    //创建房间成功后，不能立即获取volume，需要等待少许时间
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _micSlider.intValue = [[ILiveSDK getInstance] getAVContext].audioCtrl.volume;
+        _volume = [[ILiveSDK getInstance] getAVContext].audioCtrl.volume;
+    });
     
     [_beautySlider setContinuous:YES];
     [_whiteSlider setContinuous:YES];
-    
-    [_pushTypeComboBox addItemWithObjectValue:@"AV_ENCODE_HLS"];
-    [_pushTypeComboBox addItemWithObjectValue:@"AV_ENCODE_RTMP"];
-    [_pushTypeComboBox selectItemAtIndex:0];
     
     [_roleSwitchPopUpBtn addItemWithTitle:kSxbRole_HostHDTitle];
     [_roleSwitchPopUpBtn addItemWithTitle:kSxbRole_HostSDTitle];
@@ -169,11 +172,14 @@
     else {
         [_roleSwitchPopUpBtn selectItemAtIndex:2];
     }
+    
+    _screenShareBtn.enabled = YES;
 }
 
 - (void)setUpVideoUI {
     [_cameraComboBox addItemWithObjectValue:_config.cameraDesc];
     [_cameraComboBox selectItemAtIndex:0];
+    _cameraComboBox.enabled = YES;
     
     if ([[ILiveRoomManager getInstance] getCurCameraState]) {
         [_openCameraBtn setTitle:@"关闭摄像头"];
@@ -190,6 +196,7 @@
         [_openMicBtn setTitle:@"打开麦克风"];
     }
     _openMicBtn.enabled = YES;
+    _micSlider.enabled = YES;
     
     if ([[ILiveRoomManager getInstance] getCurSpeakerState]) {
         [_openSpeakerBtn setTitle:@"关闭扬声器"];
@@ -198,15 +205,12 @@
         [_openSpeakerBtn setTitle:@"打开扬声器"];
     }
     
-    [_pushTypeComboBox addItemWithObjectValue:@"AV_ENCODE_HLS"];
-    [_pushTypeComboBox addItemWithObjectValue:@"AV_ENCODE_RTMP"];
-    [_pushTypeComboBox selectItemAtIndex:0];
-    
     [_roleSwitchPopUpBtn removeAllItems];
     [_roleSwitchPopUpBtn addItemWithTitle:kSxbRole_InteractHDTitle];
     [_roleSwitchPopUpBtn addItemWithTitle:kSxbRole_InteractSDTitle];
     [_roleSwitchPopUpBtn addItemWithTitle:kSxbRole_InteractLDTitle];
     [_roleSwitchPopUpBtn selectItemAtIndex:0];
+    _roleSwitchPopUpBtn.enabled = YES;
     _roleSwitchBtn.enabled = YES;
     
     _startPushBtn.enabled = YES;
@@ -214,11 +218,23 @@
     
     _whiteSlider.enabled = YES;
     _beautySlider.enabled = YES;
+    
+    _screenShareBtn.enabled = YES;
+    
+    int value = _beautyValueTF.intValue;
+    [_tilFilter setBeautyLevel:value];
+    
+    value = _whiteValueTF.intValue;
+    [_tilFilter setWhitenessLevel:value];
 }
 
 - (void)setGuestUI {
+    
+    _cameraComboBox.enabled = NO;
     _openCameraBtn.enabled = NO;
+    
     _openMicBtn.enabled = NO;
+    _micSlider.enabled = NO;
     
     if ([[ILiveRoomManager getInstance] getCurSpeakerState]) {
         [_openSpeakerBtn setTitle:@"关闭扬声器"];
@@ -227,12 +243,16 @@
         [_openSpeakerBtn setTitle:@"打开扬声器"];
     }
     
+    _roleSwitchPopUpBtn.enabled = NO;
     _roleSwitchBtn.enabled = NO;
+    
     _startPushBtn.enabled = NO;
     _startRecordBtn.enabled = NO;
     
     _whiteSlider.enabled = NO;
     _beautySlider.enabled = NO;
+    
+    _screenShareBtn.enabled = NO;
 }
 
 - (IBAction)onMicSlider:(NSSlider *)sender {
@@ -276,11 +296,21 @@
     [[ILiveRoomManager getInstance] joinRoom:(int)_item.info.roomnum option:option succ:^{
         NSLog(@"succ");
         [ws initUI];
+        [ws sendJoinRoomMsg];
     } failed:^(NSString *module, int errId, NSString *errMsg) {
         [ws onExitLive:nil];
         NSLog(@"joinRoom fail,module=%@,code=%d,msg=%@",module,errId,errMsg);
         NSString *failInfo = [NSString stringWithFormat:@"join room fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
         [SuixinboAlert tipsWith:failInfo];
+    }];
+}
+
+- (void)sendJoinRoomMsg
+{
+    [self sendCustomGroupMessage:YES recvId:[[ILiveRoomManager getInstance] getIMGroupId] cmd:(ILVLiveIMCmd)AVIMCMD_EnterLive succ:^{
+        NSLog(@"succ");
+    } fail:^(NSString *module, int errId, NSString *errMsg) {
+        NSLog(@"fail");
     }];
 }
 
@@ -401,39 +431,40 @@
 - (IBAction)onPush:(NSButton *)sender {
     __weak typeof(self) ws = self;
     static BOOL isEnableIng = NO;//控制快速点击
-    if (!isEnableIng) {
-        isEnableIng = YES;
-        if ([sender.title isEqualToString:@"开始推流"]) {
-            [self startPushStream:^{
-                [sender setTitle:@"停止推流"];
-                isEnableIng = NO;
-            } fail:^(NSString *module, int errId, NSString *errMsg) {
-                isEnableIng = NO;
-                [ws addLog:[NSString stringWithFormat:@"开始推流失败M=%@,code=%d,Msg=%@",module,errId,errMsg]];
-            }];
-        }
-        else {
-            [self stopPushStream:^{
-                [sender setTitle:@"开始推流"];
-                isEnableIng = NO;
-            } fail:^(NSString *module, int errId, NSString *errMsg) {
-                isEnableIng = NO;
-                [ws addLog:[NSString stringWithFormat:@"停止推流失败M=%@,code=%d,Msg=%@",module,errId,errMsg]];
-            }];
-        }
+    //弹出推流参数填写窗口
+    if (!_pushParamWC) {
+        _pushParamWC = [[PushParamWindowController alloc] initWithWindowNibName:@"PushParamWindowController"];
     }
+    _pushParamWC.startPush = ^(ILivePushOption *option) {
+        if (!isEnableIng) {
+            isEnableIng = YES;
+            if ([sender.title isEqualToString:@"开始推流"]) {
+                [ws startPushStream:option succ:^{
+                    [sender setTitle:@"停止推流"];
+                    isEnableIng = NO;
+                } fail:^(NSString *module, int errId, NSString *errMsg) {
+                    isEnableIng = NO;
+                    [ws addLog:[NSString stringWithFormat:@"开始推流失败M=%@,code=%d,Msg=%@",module,errId,errMsg]];
+                }];
+            }
+            else {
+                [ws stopPushStream:^{
+                    [sender setTitle:@"开始推流"];
+                    isEnableIng = NO;
+                } fail:^(NSString *module, int errId, NSString *errMsg) {
+                    isEnableIng = NO;
+                    [ws addLog:[NSString stringWithFormat:@"停止推流失败M=%@,code=%d,Msg=%@",module,errId,errMsg]];
+                }];
+            }
+        }
+    };
+    _pushParamWC.cancelPush = ^{
+        isEnableIng = NO;
+    };
+    [_pushParamWC.window orderFront:nil];
 }
 
-- (void)startPushStream:(TCIVoidBlock)succ fail:(TCIErrorBlock)fail{
-    ILiveChannelInfo *info = [[ILiveChannelInfo alloc] init];
-    info.channelName = [NSString stringWithFormat:@"Mac_随心播推流_%@",[[ILiveLoginManager getInstance] getLoginId]];
-    info.channelDesc = [NSString stringWithFormat:@"Mac_随心播推流描述测试文本"];
-    
-    ILivePushOption *option = [[ILivePushOption alloc] init];
-    option.channelInfo = info;
-    option.encodeType = [self getEncodeType:_pushTypeComboBox.indexOfSelectedItem];
-    option.recrodFileType = AV_RECORD_FILE_TYPE_MP4;
-    
+- (void)startPushStream:(ILivePushOption *)option succ:(TCIVoidBlock)succ fail:(TCIErrorBlock)fail{
     __weak typeof(self) ws = self;
     [[ILiveRoomManager getInstance] startPushStream:option succ:^(id selfPtr) {
         AVStreamerResp *resp = (AVStreamerResp *)selfPtr;
@@ -500,23 +531,42 @@
     }
 }
 
-- (void)startRecord:(TCIVoidBlock)succ fail:(TCIErrorBlock)fail{
-    NSString *recName = _recordFileNameTF.stringValue.length ? _recordFileNameTF.stringValue : @"默认录制文件名";
-    [self recordReport:recName type:AV_RECORD_TYPE_VIDEO];
-    
-    ILiveRecordOption *option = [[ILiveRecordOption alloc] init];
+- (void)startRecord:(TCIVoidBlock)succ fail:(TCIErrorBlock)fail {
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert addButtonWithTitle:@"开始录制"];
+    [alert addButtonWithTitle:@"取消"];
+    [alert setMessageText:@"输入录制文件名"];
+    [alert setAlertStyle:NSAlertStyleInformational];
+    NSTextField *offset = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 24)];
+    offset.placeholderString = @"录制文件名";
     NSString *identifier = [[ILiveLoginManager getInstance] getLoginId];
-    option.fileName = [NSString stringWithFormat:@"sxb_%@_%@",identifier,recName];
-    option.recordType = AV_RECORD_TYPE_VIDEO;
-    [[ILiveRoomManager getInstance] startRecordVideo:option succ:^{
-        succ ? succ() : nil;
-    } failed:^(NSString *module, int errId, NSString *errMsg) {
-        if (fail) {
-            fail(module,errId,errMsg);
+    NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
+    offset.stringValue = [NSString stringWithFormat:@"sxb_%@_%ld",identifier,(long)time];
+    [alert setAccessoryView:offset];
+    [alert setAccessoryView:offset];
+    
+    [alert beginSheetModalForWindow:[self window] completionHandler:^(NSModalResponse returnCode) {
+        if (returnCode == NSAlertFirstButtonReturn) {
+            NSString *recName = offset.stringValue.length ? offset.stringValue : @"sxb_默认录制文件名";
+            [self recordReport:recName type:ILive_RECORD_TYPE_VIDEO];
+            
+            ILiveRecordOption *option = [[ILiveRecordOption alloc] init];
+            option.fileName = offset.stringValue;
+            option.recordType = ILive_RECORD_TYPE_VIDEO;
+            [[ILiveRoomManager getInstance] startRecordVideo:option succ:^{
+                succ ? succ() : nil;
+            } failed:^(NSString *module, int errId, NSString *errMsg) {
+                if (fail) {
+                    fail(module,errId,errMsg);
+                }
+                NSLog(@"start record fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
+                NSString *failInfo = [NSString stringWithFormat:@"start record fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
+                [SuixinboAlert tipsWith:failInfo];
+            }];
         }
-        NSLog(@"start record fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
-        NSString *failInfo = [NSString stringWithFormat:@"start record fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
-        [SuixinboAlert tipsWith:failInfo];
+        if (returnCode == NSAlertSecondButtonReturn) {
+            fail ? fail(MODULE_ILIVESDK,-1,nil) : nil;
+        }
     }];
 }
 - (void)stopRecord:(TCIVoidBlock)succ fail:(TCIErrorBlock)fail{
@@ -530,6 +580,21 @@
         NSString *failInfo = [NSString stringWithFormat:@"stop record fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
         [SuixinboAlert tipsWith:failInfo];
     }];
+}
+
+- (IBAction)onScreenShare:(NSButton *)sender {
+    if (!_screenShareWC) {
+        _screenShareWC = [[ScreenShareWindowController alloc] initWithWindowNibName:@"ScreenShareWindowController"];
+    }
+    if ([[ILiveRoomManager getInstance] getCurScreenState])//如果正在屏幕分享，仅设置区域就可以了
+    {
+        [_screenShareWC.shareBtn setTitle:@"更改分享区域"];
+    }
+    else
+    {
+        [_screenShareWC.shareBtn setTitle:@"开始屏幕分享"];
+    }
+    [_screenShareWC.window orderFront:nil];
 }
 
 //回车键发送消息
@@ -623,7 +688,7 @@
     [_logTextView scrollToEndOfDocument:_logTextView];
 }
 
-- (void)recordReport:(NSString *)name type:(AVRecordType)type
+- (void)recordReport:(NSString *)name type:(ILiveRecordType)type
 {
     RecordReportRequest *req = [[RecordReportRequest alloc] initWithHandler:^(BaseRequest *request) {
         NSLog(@"rec report succ");
@@ -725,15 +790,6 @@
         }
     }
     return nil;
-}
-
-- (AVEncodeType)getEncodeType:(NSInteger)index {
-    if (index == 0) {
-        return AV_ENCODE_HLS;
-    }
-    else {
-        return AV_ENCODE_RTMP;
-    }
 }
 
 - (void)reportMemberId:(NSInteger)roomnum operate:(NSInteger)operate {

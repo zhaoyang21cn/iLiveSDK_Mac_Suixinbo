@@ -42,4 +42,6 @@
 
 @property (strong) LiveWindowController *liveWC;
 
+- (IBAction)onCancel:(id)sender;
+
 @end

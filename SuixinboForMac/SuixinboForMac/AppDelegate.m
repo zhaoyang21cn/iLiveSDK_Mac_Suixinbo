@@ -21,6 +21,9 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     
+    //0 正式环境， 1 测试环境
+//    [[[ILiveSDK getInstance] getTIMManager] setEnv:1];
+    
     //init sdk
     [[ILiveSDK getInstance] initSdk:SuixinboSdkAppId accountType:SuixinboAccountType];
     

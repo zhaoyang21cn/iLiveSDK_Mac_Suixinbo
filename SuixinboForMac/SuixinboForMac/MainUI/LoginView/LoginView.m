@@ -30,8 +30,41 @@
     self.hidden = YES;
 }
 
-- (BOOL)isInputInvalid{
+
+- (BOOL)isInputInvalid {
+    
     if (_accountTF.stringValue.length <= 0 || _passwardTF.stringValue.length <= 0) {
+        return YES;
+    }
+    if ([self invalidAccount:_accountTF.stringValue] || [self invalidPwd:_passwardTF.stringValue])
+    {
+        return YES;
+    }
+    return NO;
+}
+
+//用户名为4～24个字符，不能为纯数字
+- (BOOL)invalidAccount:(NSString *)account
+{
+    if (account.length < 4 || account.length > 24)
+    {
+        return YES;
+    }
+    
+    NSString *inputString = [account stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
+    if (inputString.length <= 0) {//是纯数字
+        return YES;
+    }
+    else{
+        return NO;
+    }
+}
+
+//密码长度为8～16个字符
+- (BOOL)invalidPwd:(NSString *)pwd
+{
+    if (pwd.length < 8 || pwd.length > 16)
+    {
         return YES;
     }
     return NO;
@@ -40,7 +73,7 @@
 - (IBAction)onLogin:(id)sender {
     
     if ([self isInputInvalid]) {
-        [SuixinboAlert tipsWith:@"账号或密码为空" showTo:self.window];
+        [SuixinboAlert tipsWith:@"输入的账号或密码不合法" showTo:self.window];
         return;
     }
     ((NSButton *)sender).enabled = NO;
@@ -85,7 +118,7 @@
 
 - (IBAction)onRegist:(id)sender {
     if ([self isInputInvalid]) {
-        [SuixinboAlert tipsWith:@"账号或密码为空" showTo:self.window];
+        [SuixinboAlert tipsWith:@"账号或密码不合法" showTo:self.window];
         return;
     }
     ((NSButton *)sender).enabled = NO;

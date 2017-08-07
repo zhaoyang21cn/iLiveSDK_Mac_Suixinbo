@@ -63,7 +63,13 @@
     for (QAVEndpoint *endpoint in endpoints) {
         NSString *identifier = endpoint.identifier;
         ILiveRenderViewForMac *view = [[RenderViewManager shareInstance] addScreenRenderView:identifier];
-        [self.window.contentView addSubview:view];
+        if (view.frame.size.width >= 640) {//大画面，置于底层
+            [self.window.contentView addSubview:view positioned:NSWindowBelow relativeTo:nil];
+        }
+        else {
+            [self.window.contentView addSubview:view];
+        }
+        
     }
 }
 

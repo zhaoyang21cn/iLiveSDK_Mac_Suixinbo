@@ -39,6 +39,10 @@
 {
     _pageItem.pageIndex = 1;
     _pageItem.pageSize = _numberTF.stringValue.length>0 ? [_numberTF.stringValue integerValue] : 15;
+    if (_pageItem.pageSize > 100 || _pageItem.pageSize < 0)//后台限制在0-100之间
+    {
+        _pageItem.pageSize = 15;
+    }
     [_datas removeAllObjects];
     
     __weak typeof(self) ws = self;

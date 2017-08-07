@@ -31,6 +31,9 @@
         if (ws.liveWC && [[ILiveRoomManager getInstance] getRoomId]) {//登出时正在直播或正在观看
             [ws.liveWC onExitLive:nil];
         }
+        if (ws.createRoomWC) {
+            [ws.createRoomWC onCancel:nil];
+        }
     };
 }
 

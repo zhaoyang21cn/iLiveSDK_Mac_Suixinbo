@@ -10,5 +10,9 @@
 
 @interface MemberCellView : NSTableCellView
 
+@property (strong) IBOutlet NSImageView *avatarImageView;
+@property (strong) IBOutlet NSTextField *identifierTF;
+@property (strong) IBOutlet NSTextField *userRoleTF;
+
 - (void)config:(MemberListItem *)item;
 @end

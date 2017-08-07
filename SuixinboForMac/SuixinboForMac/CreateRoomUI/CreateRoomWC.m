@@ -102,7 +102,20 @@
     });
 }
 
+- (BOOL)invalidRoomTitle:(NSString *)title
+{
+    if (title.length > 32 || title.length <= 0) {
+        return YES;
+    }
+    return NO;
+}
+
 - (IBAction)onCreateRoom:(id)sender {
+    if ([self invalidRoomTitle:_liveTitleTF.stringValue]) {
+        [SuixinboAlert tipsWith:@"输入标题长度为0～32字符" showTo:self.window];
+        return;
+    }
+    
     [self publishLive];
 }
 
