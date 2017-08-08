@@ -431,37 +431,50 @@
 - (IBAction)onPush:(NSButton *)sender {
     __weak typeof(self) ws = self;
     static BOOL isEnableIng = NO;//控制快速点击
-    //弹出推流参数填写窗口
-    if (!_pushParamWC) {
-        _pushParamWC = [[PushParamWindowController alloc] initWithWindowNibName:@"PushParamWindowController"];
-    }
-    _pushParamWC.startPush = ^(ILivePushOption *option) {
-        if (!isEnableIng) {
-            isEnableIng = YES;
-            if ([sender.title isEqualToString:@"开始推流"]) {
-                [ws startPushStream:option succ:^{
-                    [sender setTitle:@"停止推流"];
-                    isEnableIng = NO;
-                } fail:^(NSString *module, int errId, NSString *errMsg) {
-                    isEnableIng = NO;
-                    [ws addLog:[NSString stringWithFormat:@"开始推流失败M=%@,code=%d,Msg=%@",module,errId,errMsg]];
-                }];
-            }
-            else {
-                [ws stopPushStream:^{
-                    [sender setTitle:@"开始推流"];
-                    isEnableIng = NO;
-                } fail:^(NSString *module, int errId, NSString *errMsg) {
-                    isEnableIng = NO;
-                    [ws addLog:[NSString stringWithFormat:@"停止推流失败M=%@,code=%d,Msg=%@",module,errId,errMsg]];
-                }];
-            }
+    if ([sender.title isEqualToString:@"开始推流"])
+    {
+        //弹出推流参数填写窗口
+        if (!_pushParamWC) {
+            _pushParamWC = [[PushParamWindowController alloc] initWithWindowNibName:@"PushParamWindowController"];
         }
-    };
-    _pushParamWC.cancelPush = ^{
-        isEnableIng = NO;
-    };
-    [_pushParamWC.window orderFront:nil];
+        _pushParamWC.startPush = ^(ILivePushOption *option) {
+            if (!isEnableIng) {
+                isEnableIng = YES;
+                if ([sender.title isEqualToString:@"开始推流"]) {
+                    [ws startPushStream:option succ:^{
+                        [sender setTitle:@"停止推流"];
+                        isEnableIng = NO;
+                    } fail:^(NSString *module, int errId, NSString *errMsg) {
+                        isEnableIng = NO;
+                        [ws addLog:[NSString stringWithFormat:@"开始推流失败M=%@,code=%d,Msg=%@",module,errId,errMsg]];
+                    }];
+                }
+                else {
+                    [ws stopPushStream:^{
+                        [sender setTitle:@"开始推流"];
+                        isEnableIng = NO;
+                    } fail:^(NSString *module, int errId, NSString *errMsg) {
+                        isEnableIng = NO;
+                        [ws addLog:[NSString stringWithFormat:@"停止推流失败M=%@,code=%d,Msg=%@",module,errId,errMsg]];
+                    }];
+                }
+            }
+        };
+        _pushParamWC.cancelPush = ^{
+            isEnableIng = NO;
+        };
+        [_pushParamWC.window orderFront:nil];
+    }
+    else
+    {
+        [ws stopPushStream:^{
+            [sender setTitle:@"开始推流"];
+            isEnableIng = NO;
+        } fail:^(NSString *module, int errId, NSString *errMsg) {
+            isEnableIng = NO;
+            [ws addLog:[NSString stringWithFormat:@"停止推流失败M=%@,code=%d,Msg=%@",module,errId,errMsg]];
+        }];
+    }
 }
 
 - (void)startPushStream:(ILivePushOption *)option succ:(TCIVoidBlock)succ fail:(TCIErrorBlock)fail{
