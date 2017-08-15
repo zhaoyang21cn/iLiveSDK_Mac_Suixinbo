@@ -14,11 +14,20 @@ SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 
 2、源码运行
 
-** 解压SDK压缩包 **
+** 下载SDK **
 
-由于Github上有100MB文件上传限制，所以随心播工程中将QAVSDK压缩后再上传，要使随心播正常运行，请开发人员解压iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac/AVSDK.zip 到当前目录，解压后如下图所示:
+由于github有上传文件大小限制，请切记，下载工程之后，需要单独下载SDK。
 
-![](http://mc.qcloudimg.com/static/img/e70b619d7c575b395680c4242f528f4f/image.png)
+下载SDK很简单： 
+
+1、打开终端，输入: cd FrameworksMac目录， 进入随心播FrameworksMac目录 
+
+2、运行脚本下载SDK, 终端输入:sh LoadSDK.sh 
+
+脚本会自动下载SDK，并解压到当前目录，这会消耗几分钟时间，下载好之后在看工程目录中，打开随心播工程可以看到，FrameworksMac下的所有SDK已经变成黑色状态，也就是可用状态了(如果有SDK下载失败的情况，重新运行脚本再下载一次)。
+
+此时可以直接运行了
+![](http://mc.qcloudimg.com/static/img/20c7e51f679f2ee525cc382f6c294e7f/image.png)
 
 ## SDK最近更新说明
 
