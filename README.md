@@ -31,8 +31,10 @@ SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 
 ## SDK最近更新说明
 
-###### V1.6.0.11371(2017-8-7)
-* 1、MacOS 平台增加屏幕分享能力
+###### V1.6.1.11681(2017-9-7)
+* 1、修复 被踢下线，再次登录时出现1003错误的问题
+* 2、房间失去连接时，释放内部资源
+* 3、增加内部关键日志打印
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
