@@ -14,10 +14,33 @@
     [super drawRect:dirtyRect];
     
     // Drawing code here.
+    
+//    [self setWantsLayer:YES];
+//    self.layer.backgroundColor = [NSColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1].CGColor;
+//    [self setNeedsDisplay:YES];
+//    
+//    [_bgView setWantsLayer:YES];
+//    _bgView.layer.backgroundColor = [NSColor colorWithRed:1 green:1 blue:1 alpha:1].CGColor;
+//    [_bgView setNeedsDisplay:YES];
 }
 
 - (void)awakeFromNib {
-    self.layer.backgroundColor = CGColorCreateGenericRGB(67.0/256.0, 67.0/256.0, 67.0/256.0, 0.2);
+
+    CGFloat fullbgcolor = 51.0/256.0;
+    [self setWantsLayer:YES];
+    self.layer.backgroundColor = [NSColor colorWithRed:fullbgcolor green:fullbgcolor blue:fullbgcolor alpha:1].CGColor;
+    [self setNeedsDisplay:YES];
+    
+    CGFloat smallbgcolor = 241.0/256.0;
+    [_bgView setWantsLayer:YES];
+    _bgView.layer.backgroundColor = [NSColor colorWithRed:smallbgcolor green:smallbgcolor blue:smallbgcolor alpha:1].CGColor;
+    [_bgView setNeedsDisplay:YES];
+    
+//    CGColorRef btnbgcolor = [NSColor colorWithRed:0 green:0 blue:1 alpha:1].CGColor;
+//    [_loginBtn setWantsLayer:YES];
+    _loginBtn.layer.backgroundColor = [NSColor blueColor].CGColor;//[NSColor colorWithRed:0 green:0 blue:1 alpha:1].CGColor;
+//    [_loginBtn setNeedsDisplay:YES];
+    
 }
 
 - (void)show {

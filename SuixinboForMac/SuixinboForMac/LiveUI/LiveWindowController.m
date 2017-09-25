@@ -25,7 +25,7 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-//     Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    //     Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     self.window.title = [NSString stringWithFormat:@"%@ 的直播", _item.uid];
     
     [self initLive];
@@ -58,8 +58,8 @@
     //如果使用美颜sdk，需要设置本地画面代理，详情参考LiveWindowController+Beauty.m中的实现
     [[ILiveRoomManager getInstance] setLocalVideoDelegate:self];
     
-//    [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_VoiceDispose];
-//    [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_Play];
+    //    [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_VoiceDispose];
+    //    [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_Play];
     //uninit todo
 }
 
@@ -91,7 +91,7 @@
     option.memberStatusListener = self;             //房间内用户的事件回调
     option.firstFrameListener = self;               //首帧画面监听
     __weak typeof(self) ws = self;
-//    _item.info.roomnum = 801234;
+    //    _item.info.roomnum = 801234;
     [[ILiveRoomManager getInstance] createRoom:(int)_item.info.roomnum option:option succ:^{
         NSLog(@"succ");
         if (option.avOption.autoCamera) {
@@ -327,7 +327,7 @@
 }
 
 - (IBAction)onCamera:(NSButton *)sender {
-//    [self test];
+    //    [self test];
     static BOOL isEnableIng = NO;//控制快速点击
     if (!isEnableIng) {
         isEnableIng = YES;

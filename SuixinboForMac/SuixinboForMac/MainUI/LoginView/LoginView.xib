@@ -13,70 +13,78 @@
             <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRj-Oq-8ML">
-                    <rect key="frame" x="203" y="306" width="55" height="20"/>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qaT-Id-2Hy">
+                    <rect key="frame" x="160" y="120" width="320" height="240"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="用户名" id="Rbe-2F-8KL">
-                        <font key="font" size="15" name=".PingFangSC-Regular"/>
-                        <color key="textColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WQV-d8-ZpJ">
-                    <rect key="frame" x="203" y="247" width="40" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="密码" id="34u-U7-r0K">
-                        <font key="font" size="15" name=".PingFangSC-Regular"/>
-                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JtK-DF-wIR" userLabel="Account Text Field">
-                    <rect key="frame" x="205" y="272" width="230" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="4～24个字符，不能为纯数字" drawsBackground="YES" id="Cp7-t2-rb6">
-                        <font key="font" metaFont="system" size="17"/>
-                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdp-4r-Mem">
-                    <rect key="frame" x="205" y="153" width="106" height="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="square" title="登录" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Se1-Lq-XjA">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="17" name=".PingFangSC-Regular"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="onLogin:" target="c22-O7-iKe" id="vJN-6w-2QM"/>
-                    </connections>
-                </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GeO-4Q-ayX">
-                    <rect key="frame" x="334" y="154" width="101" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="square" title="注册" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RfD-ZO-JPc">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="17" name=".PingFangSC-Regular"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="onRegist:" target="c22-O7-iKe" id="v0j-ne-1hW"/>
-                    </connections>
-                </button>
-                <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tw2-ag-xd5" userLabel="Passward Secure Text Field">
-                    <rect key="frame" x="205" y="214" width="230" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="用户密码为8-16个字符" drawsBackground="YES" usesSingleLineMode="YES" id="Szo-Kb-uao">
-                        <font key="font" metaFont="system" size="17"/>
-                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        <allowedInputSourceLocales>
-                            <string>NSAllRomanInputSourcesLocaleIdentifier</string>
-                        </allowedInputSourceLocales>
-                    </secureTextFieldCell>
-                </secureTextField>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRj-Oq-8ML">
+                            <rect key="frame" x="43" y="186" width="55" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="用户名" id="Rbe-2F-8KL">
+                                <font key="font" size="15" name=".PingFangSC-Regular"/>
+                                <color key="textColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WQV-d8-ZpJ">
+                            <rect key="frame" x="43" y="127" width="40" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="密码" id="34u-U7-r0K">
+                                <font key="font" size="15" name=".PingFangSC-Regular"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JtK-DF-wIR" userLabel="Account Text Field">
+                            <rect key="frame" x="45" y="152" width="230" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="4～24个字符，不能为纯数字" drawsBackground="YES" id="Cp7-t2-rb6">
+                                <font key="font" metaFont="system" size="17"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdp-4r-Mem">
+                            <rect key="frame" x="45" y="33" width="106" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="square" title="登录" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Se1-Lq-XjA">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" size="17" name=".PingFangSC-Regular"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="onLogin:" target="c22-O7-iKe" id="vJN-6w-2QM"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GeO-4Q-ayX">
+                            <rect key="frame" x="174" y="34" width="101" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="square" title="注册" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RfD-ZO-JPc">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" size="17" name=".PingFangSC-Regular"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="onRegist:" target="c22-O7-iKe" id="v0j-ne-1hW"/>
+                            </connections>
+                        </button>
+                        <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tw2-ag-xd5" userLabel="Passward Secure Text Field">
+                            <rect key="frame" x="45" y="94" width="230" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="用户密码为8-16个字符" drawsBackground="YES" usesSingleLineMode="YES" id="Szo-Kb-uao">
+                                <font key="font" metaFont="system" size="17"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <allowedInputSourceLocales>
+                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                </allowedInputSourceLocales>
+                            </secureTextFieldCell>
+                        </secureTextField>
+                    </subviews>
+                </customView>
             </subviews>
             <connections>
                 <outlet property="accountTF" destination="JtK-DF-wIR" id="1Cm-0v-bUr"/>
+                <outlet property="bgView" destination="qaT-Id-2Hy" id="oPe-tc-WQN"/>
+                <outlet property="loginBtn" destination="fdp-4r-Mem" id="N1Y-v2-mAV"/>
                 <outlet property="passwardTF" destination="Tw2-ag-xd5" id="43x-SY-paw"/>
             </connections>
         </customView>

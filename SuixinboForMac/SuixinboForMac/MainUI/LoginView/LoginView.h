@@ -19,8 +19,13 @@
  */
 @interface LoginView : NSView
 
+@property (strong) IBOutlet NSView *bgView;
+
 @property (strong) IBOutlet NSTextField *accountTF;//用户名输入框
 @property (strong) IBOutlet NSSecureTextField *passwardTF;//密码输入框
+@property (strong) IBOutlet NSButton *loginBtn;
+
+
 @property (weak) id<LoginViewDelegate>   delegate;
 
 - (void)show;
