@@ -31,10 +31,8 @@ SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 
 ## SDK最近更新说明
 
-###### V1.6.1.11681(2017-9-7)
-* 1、修复 被踢下线，再次登录时出现1003错误的问题
-* 2、房间失去连接时，释放内部资源
-* 3、增加内部关键日志打印
+###### V1.7.0.11812(2017-9-25)
+* 1、增加极速模式
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
