@@ -5,7 +5,7 @@
 echo "|-------------------------------sdk version--------------------------------|"
 ILiveSDKVersion="ILiveSDKMac_1.7.1.12078"
 IMSDKSDKVersion="IMSDK_2.5.4.10421.10420"
-AVSDKVersion="AVSDK_1.9.5.914.Local"
+AVSDKVersion="AVSDK_1.9.5.1031.Local"
 
 echo $ILiveSDKVersion
 echo $IMSDKSDKVersion

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9B0BB9311F79050D004AD449 /* QAVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB9271F79050D004AD449 /* QAVSDK.framework */; };
-		9B0BB9321F79050D004AD449 /* xplatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB9281F79050D004AD449 /* xplatform.framework */; };
 		9B0BB9331F79050D004AD449 /* ILiveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB92A1F79050D004AD449 /* ILiveSDK.framework */; };
 		9B0BB9341F79050D004AD449 /* TILFilterSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB92B1F79050D004AD449 /* TILFilterSDK.framework */; };
 		9B0BB9351F79050D004AD449 /* IMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB92D1F79050D004AD449 /* IMCore.framework */; };
@@ -92,7 +91,6 @@
 /* Begin PBXFileReference section */
 		9B0972FD1EE92D1600128CFF /* SuixinboToolsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuixinboToolsHeader.h; sourceTree = "<group>"; };
 		9B0BB9271F79050D004AD449 /* QAVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QAVSDK.framework; sourceTree = "<group>"; };
-		9B0BB9281F79050D004AD449 /* xplatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = xplatform.framework; sourceTree = "<group>"; };
 		9B0BB92A1F79050D004AD449 /* ILiveSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ILiveSDK.framework; sourceTree = "<group>"; };
 		9B0BB92B1F79050D004AD449 /* TILFilterSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TILFilterSDK.framework; sourceTree = "<group>"; };
 		9B0BB92D1F79050D004AD449 /* IMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMCore.framework; sourceTree = "<group>"; };
@@ -240,7 +238,6 @@
 				9BC0CE8D1EE81CB8005B42BA /* libiconv.tbd in Frameworks */,
 				9BC0CE921EE81CB8005B42BA /* libz.tbd in Frameworks */,
 				9B0BB9361F79050D004AD449 /* ImSDK.framework in Frameworks */,
-				9B0BB9321F79050D004AD449 /* xplatform.framework in Frameworks */,
 				9B0BB9341F79050D004AD449 /* TILFilterSDK.framework in Frameworks */,
 				9B0BB9381F79050D004AD449 /* TLSSDK.framework in Frameworks */,
 				9BC0CE881EE81CB8005B42BA /* CoreTelephony.framework in Frameworks */,
@@ -273,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				9B0BB9271F79050D004AD449 /* QAVSDK.framework */,
-				9B0BB9281F79050D004AD449 /* xplatform.framework */,
 			);
 			path = AVSDK;
 			sourceTree = "<group>";
