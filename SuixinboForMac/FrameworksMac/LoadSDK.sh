@@ -3,9 +3,9 @@
 
 # 加载各个模块SDK
 echo "|-------------------------------sdk version--------------------------------|"
-ILiveSDKVersion="ILiveSDKMac_1.7.1.12078"
+ILiveSDKVersion="ILiveSDKMac_1.7.2.12519"
 IMSDKSDKVersion="IMSDK_2.5.4.10421.10420"
-AVSDKVersion="AVSDK_1.9.5.914.Local"
+AVSDKVersion="AVSDK_1.9.6.1129.Local"
 
 echo $ILiveSDKVersion
 echo $IMSDKSDKVersion

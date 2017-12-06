@@ -20,7 +20,8 @@
 - (NSDictionary *)packageParams
 {
     NSDictionary *paramDic = @{@"id"  : _identifier,
-                               @"pwd" : _pwd
+                               @"pwd" : _pwd,
+                               @"appid" : @([[ILiveSDK getInstance] getAppId])
                                };
     return paramDic;
 }

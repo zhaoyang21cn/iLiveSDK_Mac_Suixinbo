@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9B0BB9311F79050D004AD449 /* QAVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB9271F79050D004AD449 /* QAVSDK.framework */; };
-		9B0BB9331F79050D004AD449 /* ILiveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB92A1F79050D004AD449 /* ILiveSDK.framework */; };
 		9B0BB9341F79050D004AD449 /* TILFilterSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB92B1F79050D004AD449 /* TILFilterSDK.framework */; };
 		9B0BB9351F79050D004AD449 /* IMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB92D1F79050D004AD449 /* IMCore.framework */; };
 		9B0BB9361F79050D004AD449 /* ImSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB92E1F79050D004AD449 /* ImSDK.framework */; };
@@ -19,6 +18,7 @@
 		9B48ECD71F2994C8005244FE /* PushParamWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B48ECD51F2994C8005244FE /* PushParamWindowController.xib */; };
 		9B48ECDC1F29E35D005244FE /* ScreenShareWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B48ECDA1F29E35D005244FE /* ScreenShareWindowController.m */; };
 		9B48ECDD1F29E35D005244FE /* ScreenShareWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B48ECDB1F29E35D005244FE /* ScreenShareWindowController.xib */; };
+		9B7907D61FA9CA9B00171AB8 /* ILiveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7907D51FA9CA9B00171AB8 /* ILiveSDK.framework */; };
 		9B9F09101F00FEB500DF7B40 /* RoomInfoWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F090E1F00FEB500DF7B40 /* RoomInfoWindowController.m */; };
 		9B9F09111F00FEB500DF7B40 /* RoomInfoWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9F090F1F00FEB500DF7B40 /* RoomInfoWindowController.xib */; };
 		9B9F092B1F0124B700DF7B40 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F09201F0124B700DF7B40 /* LoginView.m */; };
@@ -91,20 +91,18 @@
 /* Begin PBXFileReference section */
 		9B0972FD1EE92D1600128CFF /* SuixinboToolsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuixinboToolsHeader.h; sourceTree = "<group>"; };
 		9B0BB9271F79050D004AD449 /* QAVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QAVSDK.framework; sourceTree = "<group>"; };
-		9B0BB92A1F79050D004AD449 /* ILiveSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ILiveSDK.framework; sourceTree = "<group>"; };
 		9B0BB92B1F79050D004AD449 /* TILFilterSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TILFilterSDK.framework; sourceTree = "<group>"; };
 		9B0BB92D1F79050D004AD449 /* IMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMCore.framework; sourceTree = "<group>"; };
 		9B0BB92E1F79050D004AD449 /* ImSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImSDK.framework; sourceTree = "<group>"; };
 		9B0BB92F1F79050D004AD449 /* QALSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QALSDK.framework; sourceTree = "<group>"; };
 		9B0BB9301F79050D004AD449 /* TLSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TLSSDK.framework; sourceTree = "<group>"; };
-		9B38A3BD1F0F8C7200200FF1 /* libILiveSDKForMac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libILiveSDKForMac.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/TCILiveSDKDemo-aetqaolenaehgicydmbxefmatwob/Build/Products/Debug/libILiveSDKForMac.a"; sourceTree = "<group>"; };
 		9B48ECD31F2994C8005244FE /* PushParamWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushParamWindowController.h; sourceTree = "<group>"; };
 		9B48ECD41F2994C8005244FE /* PushParamWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushParamWindowController.m; sourceTree = "<group>"; };
 		9B48ECD51F2994C8005244FE /* PushParamWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushParamWindowController.xib; sourceTree = "<group>"; };
 		9B48ECD91F29E35D005244FE /* ScreenShareWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenShareWindowController.h; sourceTree = "<group>"; };
 		9B48ECDA1F29E35D005244FE /* ScreenShareWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenShareWindowController.m; sourceTree = "<group>"; };
 		9B48ECDB1F29E35D005244FE /* ScreenShareWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScreenShareWindowController.xib; sourceTree = "<group>"; };
-		9B57F77F1F283A030024F3DE /* libprotobufForMac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libprotobufForMac.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/TCILiveSDKDemo-aetqaolenaehgicydmbxefmatwob/Build/Products/Default/libprotobufForMac.a"; sourceTree = "<group>"; };
+		9B7907D51FA9CA9B00171AB8 /* ILiveSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ILiveSDK.framework; sourceTree = "<group>"; };
 		9B9F090D1F00FEB500DF7B40 /* RoomInfoWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomInfoWindowController.h; sourceTree = "<group>"; };
 		9B9F090E1F00FEB500DF7B40 /* RoomInfoWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomInfoWindowController.m; sourceTree = "<group>"; };
 		9B9F090F1F00FEB500DF7B40 /* RoomInfoWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomInfoWindowController.xib; sourceTree = "<group>"; };
@@ -245,11 +243,11 @@
 				9B0BB9311F79050D004AD449 /* QAVSDK.framework in Frameworks */,
 				9BC0CE8C1EE81CB8005B42BA /* libc++.tbd in Frameworks */,
 				9BC0CE8E1EE81CB8005B42BA /* libresolv.9.tbd in Frameworks */,
+				9B7907D61FA9CA9B00171AB8 /* ILiveSDK.framework in Frameworks */,
 				9B0BB9351F79050D004AD449 /* IMCore.framework in Frameworks */,
 				9BC0CE8A1EE81CB8005B42BA /* Foundation.framework in Frameworks */,
 				9BC0CE8B1EE81CB8005B42BA /* SystemConfiguration.framework in Frameworks */,
 				9BC0CE891EE81CB8005B42BA /* CoreWLAN.framework in Frameworks */,
-				9B0BB9331F79050D004AD449 /* ILiveSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +275,7 @@
 		9B0BB9291F79050D004AD449 /* ILiveSDK */ = {
 			isa = PBXGroup;
 			children = (
-				9B0BB92A1F79050D004AD449 /* ILiveSDK.framework */,
+				9B7907D51FA9CA9B00171AB8 /* ILiveSDK.framework */,
 				9B0BB92B1F79050D004AD449 /* TILFilterSDK.framework */,
 			);
 			path = ILiveSDK;
@@ -576,8 +574,6 @@
 		9BEB08171EE9791000411B30 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9B57F77F1F283A030024F3DE /* libprotobufForMac.a */,
-				9B38A3BD1F0F8C7200200FF1 /* libILiveSDKForMac.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
