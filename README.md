@@ -31,8 +31,9 @@ SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 
 ## SDK最近更新说明
 
-###### V1.7.0.11812(2017-9-25)
-* 1、增加极速模式
+###### V1.7.2.12519(2017-12-06)
+* 1、优化Mac随心播UI
+* 2、更新AVSDK1.9.6，提升稳定性
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
