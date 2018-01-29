@@ -31,9 +31,9 @@ SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 
 ## SDK最近更新说明
 
-###### 1.8.1.12629(2017-12-18)
-1、更新AVSDK1.9.6版本最新版版，修复内部bug
-2、ILiveSDK增加禁用数据上报接口(用于屏蔽数据上报crash问题)
+###### 1.8.3.13017(2018-1-29)
+1、修复打开/关闭摄像头失败时无回调问题
+2、增加一个登录接口，支持本地配置spear配置(在网络不稳定拉去spear配置容易失败的场景下可以用到)
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
