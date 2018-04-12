@@ -32,8 +32,11 @@ SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 ## SDK最近更新说明
 
 ###### V1.8.4.13473(2018-4-12)
+
 1、更新avsdk1.9.8
+
 2、分离日志上报模块，单独成立ILiveLogReport.Framework
+
 4、调整ILiveSDK内部日志上报机制
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
