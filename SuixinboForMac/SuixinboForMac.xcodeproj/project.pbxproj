@@ -83,6 +83,7 @@
 		9BCF69001EF7845D002E9699 /* RenderViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF68EF1EF7845D002E9699 /* RenderViewManager.m */; };
 		9BE92E231F0BCF860054121E /* LiveWindowController+Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE92E221F0BCF860054121E /* LiveWindowController+Audio.m */; };
 		9BEB081B1EE979E900411B30 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BEB081A1EE979E900411B30 /* QuartzCore.framework */; };
+		9BF5708F207F49ED008F57C5 /* ILiveLogReport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF5708E207F49ED008F57C5 /* ILiveLogReport.framework */; };
 		9BF8926E1EFE57E40087715A /* LiveWindowController+MemberList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8926D1EFE57E40087715A /* LiveWindowController+MemberList.m */; };
 		9BF892711EFE5B5D0087715A /* MemberCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF892701EFE5B5D0087715A /* MemberCellView.m */; };
 		9BF8927B1EFE7CF30087715A /* LiveWindowController+Beauty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8927A1EFE7CF30087715A /* LiveWindowController+Beauty.m */; };
@@ -217,6 +218,7 @@
 		9BE92E211F0BCF860054121E /* LiveWindowController+Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LiveWindowController+Audio.h"; sourceTree = "<group>"; };
 		9BE92E221F0BCF860054121E /* LiveWindowController+Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LiveWindowController+Audio.m"; sourceTree = "<group>"; };
 		9BEB081A1EE979E900411B30 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9BF5708E207F49ED008F57C5 /* ILiveLogReport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ILiveLogReport.framework; sourceTree = "<group>"; };
 		9BF8926C1EFE57E40087715A /* LiveWindowController+MemberList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LiveWindowController+MemberList.h"; sourceTree = "<group>"; };
 		9BF8926D1EFE57E40087715A /* LiveWindowController+MemberList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LiveWindowController+MemberList.m"; sourceTree = "<group>"; };
 		9BF8926F1EFE5B5D0087715A /* MemberCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberCellView.h; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				9BC0CE921EE81CB8005B42BA /* libz.tbd in Frameworks */,
 				9B0BB9361F79050D004AD449 /* ImSDK.framework in Frameworks */,
 				9B0BB9341F79050D004AD449 /* TILFilterSDK.framework in Frameworks */,
+				9BF5708F207F49ED008F57C5 /* ILiveLogReport.framework in Frameworks */,
 				9B0BB9381F79050D004AD449 /* TLSSDK.framework in Frameworks */,
 				9BC0CE881EE81CB8005B42BA /* CoreTelephony.framework in Frameworks */,
 				9BC0CE8F1EE81CB8005B42BA /* libsqlite3.tbd in Frameworks */,
@@ -275,6 +278,7 @@
 		9B0BB9291F79050D004AD449 /* ILiveSDK */ = {
 			isa = PBXGroup;
 			children = (
+				9BF5708E207F49ED008F57C5 /* ILiveLogReport.framework */,
 				9B7907D51FA9CA9B00171AB8 /* ILiveSDK.framework */,
 				9B0BB92B1F79050D004AD449 /* TILFilterSDK.framework */,
 			);
@@ -609,7 +613,7 @@
 				TargetAttributes = {
 					9BC0CDF31EE687F1005B42BA = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 6NQND948ZC;
+						DevelopmentTeam = P7W6W36ZY5;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -819,13 +823,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6NQND948ZC;
+				DEVELOPMENT_TEAM = P7W6W36ZY5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/FrameworksMac/AVSDK\"",
-					"\"$(SRCROOT)/FrameworksMac/ILiveSDK\"",
-					"\"$(SRCROOT)/FrameworksMac/IMSDK\"",
 					"$(PROJECT_DIR)/FrameworksMac/AVSDK",
 					"$(PROJECT_DIR)/FrameworksMac/ILiveSDK",
 					"$(PROJECT_DIR)/FrameworksMac/IMSDK",
@@ -843,6 +846,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.SuixinboForMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -851,13 +855,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6NQND948ZC;
+				DEVELOPMENT_TEAM = P7W6W36ZY5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/FrameworksMac/AVSDK\"",
-					"\"$(SRCROOT)/FrameworksMac/ILiveSDK\"",
-					"\"$(SRCROOT)/FrameworksMac/IMSDK\"",
 					"$(PROJECT_DIR)/FrameworksMac/AVSDK",
 					"$(PROJECT_DIR)/FrameworksMac/ILiveSDK",
 					"$(PROJECT_DIR)/FrameworksMac/IMSDK",
@@ -875,6 +878,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.SuixinboForMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
