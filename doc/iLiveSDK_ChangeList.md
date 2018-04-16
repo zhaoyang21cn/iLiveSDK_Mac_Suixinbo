@@ -1,5 +1,9 @@
 ## MacOS_iLiveSDK_ChangeList
 
+###### V1.8.4.13487(2018-4-16)
+1、修复日志上报字段appname值错误问题
+2、ILiveSDK中默认初始化日志上报SDK
+
 ###### V1.8.4.13473(2018-4-12)
 * 1、更新avsdk1.9.8
 * 2、分离日志上报模块，单独成立ILiveLogReport.Framework
