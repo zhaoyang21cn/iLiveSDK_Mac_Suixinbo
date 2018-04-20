@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9B0BB9311F79050D004AD449 /* QAVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB9271F79050D004AD449 /* QAVSDK.framework */; };
 		9B0BB9341F79050D004AD449 /* TILFilterSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB92B1F79050D004AD449 /* TILFilterSDK.framework */; };
 		9B0BB9351F79050D004AD449 /* IMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB92D1F79050D004AD449 /* IMCore.framework */; };
 		9B0BB9361F79050D004AD449 /* ImSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB92E1F79050D004AD449 /* ImSDK.framework */; };
@@ -87,11 +86,11 @@
 		9BF8926E1EFE57E40087715A /* LiveWindowController+MemberList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8926D1EFE57E40087715A /* LiveWindowController+MemberList.m */; };
 		9BF892711EFE5B5D0087715A /* MemberCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF892701EFE5B5D0087715A /* MemberCellView.m */; };
 		9BF8927B1EFE7CF30087715A /* LiveWindowController+Beauty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8927A1EFE7CF30087715A /* LiveWindowController+Beauty.m */; };
+		9BFF655B20899DED0050DA13 /* QAVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFF655A20899DED0050DA13 /* QAVSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9B0972FD1EE92D1600128CFF /* SuixinboToolsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuixinboToolsHeader.h; sourceTree = "<group>"; };
-		9B0BB9271F79050D004AD449 /* QAVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QAVSDK.framework; sourceTree = "<group>"; };
 		9B0BB92B1F79050D004AD449 /* TILFilterSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TILFilterSDK.framework; sourceTree = "<group>"; };
 		9B0BB92D1F79050D004AD449 /* IMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMCore.framework; sourceTree = "<group>"; };
 		9B0BB92E1F79050D004AD449 /* ImSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImSDK.framework; sourceTree = "<group>"; };
@@ -225,6 +224,7 @@
 		9BF892701EFE5B5D0087715A /* MemberCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberCellView.m; sourceTree = "<group>"; };
 		9BF892791EFE7CF30087715A /* LiveWindowController+Beauty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LiveWindowController+Beauty.h"; sourceTree = "<group>"; };
 		9BF8927A1EFE7CF30087715A /* LiveWindowController+Beauty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LiveWindowController+Beauty.m"; sourceTree = "<group>"; };
+		9BFF655A20899DED0050DA13 /* QAVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QAVSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +243,7 @@
 				9B0BB9381F79050D004AD449 /* TLSSDK.framework in Frameworks */,
 				9BC0CE881EE81CB8005B42BA /* CoreTelephony.framework in Frameworks */,
 				9BC0CE8F1EE81CB8005B42BA /* libsqlite3.tbd in Frameworks */,
-				9B0BB9311F79050D004AD449 /* QAVSDK.framework in Frameworks */,
+				9BFF655B20899DED0050DA13 /* QAVSDK.framework in Frameworks */,
 				9BC0CE8C1EE81CB8005B42BA /* libc++.tbd in Frameworks */,
 				9BC0CE8E1EE81CB8005B42BA /* libresolv.9.tbd in Frameworks */,
 				9B7907D61FA9CA9B00171AB8 /* ILiveSDK.framework in Frameworks */,
@@ -260,19 +260,11 @@
 		9B0BB9251F79050D004AD449 /* FrameworksMac */ = {
 			isa = PBXGroup;
 			children = (
-				9B0BB9261F79050D004AD449 /* AVSDK */,
+				9BFF6538208441980050DA13 /* AVSDK */,
 				9B0BB9291F79050D004AD449 /* ILiveSDK */,
 				9B0BB92C1F79050D004AD449 /* IMSDK */,
 			);
 			path = FrameworksMac;
-			sourceTree = "<group>";
-		};
-		9B0BB9261F79050D004AD449 /* AVSDK */ = {
-			isa = PBXGroup;
-			children = (
-				9B0BB9271F79050D004AD449 /* QAVSDK.framework */,
-			);
-			path = AVSDK;
 			sourceTree = "<group>";
 		};
 		9B0BB9291F79050D004AD449 /* ILiveSDK */ = {
@@ -582,6 +574,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9BFF6538208441980050DA13 /* AVSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9BFF655A20899DED0050DA13 /* QAVSDK.framework */,
+			);
+			path = AVSDK;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -832,6 +832,7 @@
 					"$(PROJECT_DIR)/FrameworksMac/AVSDK",
 					"$(PROJECT_DIR)/FrameworksMac/ILiveSDK",
 					"$(PROJECT_DIR)/FrameworksMac/IMSDK",
+					"$(PROJECT_DIR)/FrameworksMac/AVSDK\\ copy",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SuixinboForMac/Suixinbo-PrefixHeader.pch";
@@ -864,6 +865,7 @@
 					"$(PROJECT_DIR)/FrameworksMac/AVSDK",
 					"$(PROJECT_DIR)/FrameworksMac/ILiveSDK",
 					"$(PROJECT_DIR)/FrameworksMac/IMSDK",
+					"$(PROJECT_DIR)/FrameworksMac/AVSDK\\ copy",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SuixinboForMac/Suixinbo-PrefixHeader.pch";

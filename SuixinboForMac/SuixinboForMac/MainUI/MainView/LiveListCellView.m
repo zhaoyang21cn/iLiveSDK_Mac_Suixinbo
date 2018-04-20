@@ -27,7 +27,6 @@
     if (item.info.cover && item.info.cover.length > 0)
     {
         NSURL *imageUrl = [NSURL URLWithString:item.info.cover];
-        NSLog(@"%@",imageUrl);
         NSImage *image = [[NSImage alloc] initWithContentsOfURL:imageUrl];
         _liveCoverImageView.image = image;
     }

@@ -33,7 +33,6 @@
     __weak typeof(self) ws = self;
     QAVContext *context = [[ILiveSDK getInstance] getAVContext];
     NSDictionary *dic = [context.room GetQualityParam];
-    NSLog(@"%@",dic);
     if (context.videoCtrl && context.audioCtrl && context.room)
     {
         ILiveQualityData *qualityData = [[ILiveRoomManager getInstance] getQualityData];

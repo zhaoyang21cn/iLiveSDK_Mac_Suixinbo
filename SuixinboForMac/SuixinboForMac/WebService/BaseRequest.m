@@ -38,7 +38,7 @@
 
 - (void)dealloc
 {
-    NSLog(@"=========[%@] release成功>>>>>>>>>", NSStringFromClass([self class]));
+
 }
 
 - (instancetype)initWithHandler:(RequestCompletionHandler)succHandler
@@ -94,17 +94,17 @@
         NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&error];
         if(error)
         {
-            NSLog(@"[%@] Post Json Error: %@", [self class], dic);
+
         }
         else
         {
-            NSLog(@"[%@] Post Json : %@", [self class], dic);
+
         }
         return data;
     }
     else
     {
-        NSLog(@"[%@] Post Json is not valid: %@", [self class], dic);
+
     }
     return nil;
 }
@@ -114,7 +114,7 @@
 {
     if (respJsonObject)
     {
-        NSLog(@"==========[%@]开始解析响应>>>>>>>>>", self);
+
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             // 子线程解析数据
             if (_succHandler)
@@ -140,7 +140,7 @@
                         {
                             _failHandler(self);
                         }
-                        NSLog(@"==========[%@]开始解析响应完成>>>>>>>>>", self);
+
                     });
                 }
                 
@@ -163,7 +163,7 @@
                             _failHandler(self);
                         }
                     }
-                    NSLog(@"==========[%@]开始解析响应完成>>>>>>>>>", self);
+
                 });
             }
         });

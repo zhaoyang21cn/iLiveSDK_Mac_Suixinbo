@@ -54,7 +54,6 @@
             [ws.recordListTableView reloadData];
         });
         wpi.pageIndex ++;
-        NSLog(@"--->%ld",(long)recordRsp.total);
         if (ws.datas.count >= recordRsp.total)
         {
             _isCanLoadMore = NO;
@@ -64,7 +63,6 @@
             complete();
         }
     } failHandler:^(BaseRequest *request) {
-        NSLog(@"fail");
     }];
 
     recListReq.token = [AppDelegate sharedInstance].token;
@@ -128,7 +126,6 @@
             [ws searchRemoteData:index+1 targetId:identifier];
         }
     } failHandler:^(BaseRequest *request) {
-        NSLog(@"fail");
     }];
     recListReq.token = [AppDelegate sharedInstance].token;
     recListReq.type = 0;

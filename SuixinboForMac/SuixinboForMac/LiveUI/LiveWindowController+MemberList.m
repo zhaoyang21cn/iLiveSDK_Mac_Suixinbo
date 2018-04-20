@@ -40,7 +40,7 @@
 }
 
 - (BOOL)tabView:(NSTabView *)tabView shouldSelectTabViewItem:(NSTabViewItem *)tabViewItem {
-    NSLog(@"");
+
     return YES;
 }
 
@@ -106,7 +106,7 @@
     __weak typeof(self) ws = self;
     if (self.members.count > item.tag) {
         MemberListItem *memberItem = [self.members objectAtIndex:item.tag];
-        NSLog(@"%@",memberItem.identifier);
+
         if (self.isHost)
         {
             NSString *loginId = [[ILiveLoginManager getInstance] getLoginId];

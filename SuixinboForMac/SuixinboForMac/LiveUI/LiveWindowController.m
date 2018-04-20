@@ -93,7 +93,6 @@
     __weak typeof(self) ws = self;
     //    _item.info.roomnum = 801234;
     [[ILiveRoomManager getInstance] createRoom:(int)_item.info.roomnum option:option succ:^{
-        NSLog(@"succ");
         if (option.avOption.autoCamera) {
             [ws.openCameraBtn setTitle:@"关闭摄像头"];
         }
@@ -104,7 +103,6 @@
         
     } failed:^(NSString *module, int errId, NSString *errMsg) {
         [ws onExitLive:nil];
-        NSLog(@"createRoom fail,module=%@,code=%d,msg=%@",module,errId,errMsg);
         NSString *failInfo = [NSString stringWithFormat:@"create room fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
         [SuixinboAlert tipsWith:failInfo];
     }];
@@ -262,11 +260,11 @@
 - (void)reportRoomInfo
 {
     ReportRoomRequest *reportReq = [[ReportRoomRequest alloc] initWithHandler:^(BaseRequest *request) {
-        NSLog(@"-----> 上传成功");
+
         
     } failHandler:^(BaseRequest *request) {
         // 上传失败
-        NSLog(@"-----> 上传失败");
+
         
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString *errinfo = [NSString stringWithFormat:@"code=%ld,msg=%@",(long)request.response.errorCode,request.response.errorInfo];
@@ -294,12 +292,11 @@
     option.controlRole = _item.info.roleName;
     option.memberStatusListener = self;
     [[ILiveRoomManager getInstance] joinRoom:(int)_item.info.roomnum option:option succ:^{
-        NSLog(@"succ");
+
         [ws initUI];
         [ws sendJoinRoomMsg];
     } failed:^(NSString *module, int errId, NSString *errMsg) {
         [ws onExitLive:nil];
-        NSLog(@"joinRoom fail,module=%@,code=%d,msg=%@",module,errId,errMsg);
         NSString *failInfo = [NSString stringWithFormat:@"join room fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
         [SuixinboAlert tipsWith:failInfo];
     }];
@@ -308,9 +305,7 @@
 - (void)sendJoinRoomMsg
 {
     [self sendCustomGroupMessage:YES recvId:[[ILiveRoomManager getInstance] getIMGroupId] cmd:(ILVLiveIMCmd)AVIMCMD_EnterLive succ:^{
-        NSLog(@"succ");
     } fail:^(NSString *module, int errId, NSString *errMsg) {
-        NSLog(@"fail");
     }];
 }
 
@@ -320,9 +315,7 @@
     option.controlRole = @"LiveMaster";
     option.memberStatusListener = self;
     [[ILiveRoomManager getInstance] createRoom:100100 option:option succ:^{
-        NSLog(@"succ");
     } failed:^(NSString *module, int errId, NSString *errMsg) {
-        NSLog(@"fail");
     }];
 }
 
@@ -348,7 +341,6 @@
             isEnableIng = NO;
         } failed:^(NSString *module, int errId, NSString *errMsg) {
             isEnableIng = NO;
-            NSLog(@"camera option fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
             NSString *failInfo = [NSString stringWithFormat:@"camera option fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
             [SuixinboAlert tipsWith:failInfo];
         }];
@@ -376,7 +368,6 @@
             isEnableIng = NO;
         } failed:^(NSString *module, int errId, NSString *errMsg) {
             isEnableIng = NO;
-            NSLog(@"mic option fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
             NSString *failInfo = [NSString stringWithFormat:@"mic option fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
             [SuixinboAlert tipsWith:failInfo];
         }];
@@ -403,7 +394,6 @@
             isEnableIng = NO;
         } failed:^(NSString *module, int errId, NSString *errMsg) {
             isEnableIng = NO;
-            NSLog(@"speaker option fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
             NSString *failInfo = [NSString stringWithFormat:@"speaker option fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
             [SuixinboAlert tipsWith:failInfo];
         }];
@@ -422,7 +412,6 @@
             isEnableIng = NO;
         } failed:^(NSString *module, int errId, NSString *errMsg) {
             isEnableIng = NO;
-            NSLog(@"change role fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
             NSString *failInfo = [NSString stringWithFormat:@"change role fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
             [SuixinboAlert tipsWith:failInfo];
         }];
@@ -500,7 +489,6 @@
         if (fail) {
             fail(module,errId,errMsg);
         }
-        NSLog(@"start push fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
         NSString *failInfo = [NSString stringWithFormat:@"start push fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
         [SuixinboAlert tipsWith:failInfo];
     }];
@@ -515,7 +503,6 @@
         if (fail) {
             fail(module,errId,errMsg);
         }
-        NSLog(@"stop push fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
         NSString *failInfo = [NSString stringWithFormat:@"stop push fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
         [SuixinboAlert tipsWith:failInfo];
     }];
@@ -572,7 +559,6 @@
                 if (fail) {
                     fail(module,errId,errMsg);
                 }
-                NSLog(@"start record fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
                 NSString *failInfo = [NSString stringWithFormat:@"start record fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
                 [SuixinboAlert tipsWith:failInfo];
             }];
@@ -589,7 +575,6 @@
         if (fail) {
             fail(module,errId,errMsg);
         }
-        NSLog(@"stop record fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
         NSString *failInfo = [NSString stringWithFormat:@"stop record fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
         [SuixinboAlert tipsWith:failInfo];
     }];
@@ -633,7 +618,6 @@
             [ws insertMessageToUI:[NSString stringWithFormat:@"我: %@",elem.text]];
             ws.messageTF.stringValue = @"";
         } failed:^(NSString *module, int errId, NSString *errMsg) {
-            NSLog(@"send message fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
             NSString *failInfo = [NSString stringWithFormat:@"stop record fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
             [ws insertMessageToUI:[NSString stringWithFormat:@"我: 消息发送失败.%@",failInfo]];
         }];
@@ -673,7 +657,6 @@
     {
         __weak typeof(self) ws = self;
         [[ILiveSDK getInstance] uploadLog:desc.stringValue logDayOffset:[offset intValue] uploadResult:^(int retCode, NSString *retMsg, NSString *logKey) {
-            NSLog(@"--->");
             if (retCode == 0) {
                 [ws addLog:[NSString stringWithFormat:@"日志上报成功:Key=%@",logKey]];
             }
@@ -704,10 +687,9 @@
 - (void)recordReport:(NSString *)name type:(ILiveRecordType)type
 {
     RecordReportRequest *req = [[RecordReportRequest alloc] initWithHandler:^(BaseRequest *request) {
-        NSLog(@"rec report succ");
-        
+
     } failHandler:^(BaseRequest *request) {
-        NSLog(@"rec report fail %ld,%@", (long)request.response.errorCode,request.response.errorInfo);
+       
     }];
     req.token = [AppDelegate sharedInstance].token;
     req.roomnum = _item.info.roomnum;
@@ -743,9 +725,9 @@
     {
         //通知业务服务器，退房
         ExitRoomRequest *exitReq = [[ExitRoomRequest alloc] initWithHandler:^(BaseRequest *request) {
-            NSLog(@"上报退出房间成功");
+
         } failHandler:^(BaseRequest *request) {
-            NSLog(@"上报退出房间失败");
+
         }];
         
         exitReq.token = [AppDelegate sharedInstance].token;
@@ -761,7 +743,7 @@
     
     [[ILiveRoomManager getInstance] quitRoom:^{
         int roomId = [[ILiveRoomManager getInstance] getRoomId];
-        NSLog(@"%d",roomId);
+
         [ws.item cleanLocalData];
         [ws.window close];
     } failed:^(NSString *module, int errId, NSString *errMsg) {
@@ -808,11 +790,11 @@
 - (void)reportMemberId:(NSInteger)roomnum operate:(NSInteger)operate {
     __weak typeof(self) ws = self;
     ReportMemIdRequest *req = [[ReportMemIdRequest alloc] initWithHandler:^(BaseRequest *request) {
-        NSLog(@"report memeber id succ");
+
         [ws onRefreshMemberList];
         
     } failHandler:^(BaseRequest *request) {
-        NSLog(@"report memeber id fail");
+
     }];
     req.token = [AppDelegate sharedInstance].token;
     req.userId = [[ILiveLoginManager getInstance] getLoginId];
@@ -845,9 +827,8 @@
 {
     HostHeartBeatRequest *heartReq = [[HostHeartBeatRequest alloc] initWithHandler:^(BaseRequest *request) {
         
-        NSLog(@"---->heart beat succ");
     } failHandler:^(BaseRequest *request) {
-        NSLog(@"---->heart beat fail");
+
     }];
     heartReq.token = [AppDelegate sharedInstance].token;
     heartReq.roomnum = _item.info.roomnum;
@@ -895,7 +876,7 @@
         [ws.members addObjectsFromArray:listRspData.idlist];
         [ws.memberTableView reloadData];
     } failHandler:^(BaseRequest *request) {
-        NSLog(@"get group member fail ,code=%ld,msg=%@",(long)request.response.errorCode, request.response.errorInfo);
+
     }];
     listReq.token = [AppDelegate sharedInstance].token;
     listReq.roomnum = _item.info.roomnum;

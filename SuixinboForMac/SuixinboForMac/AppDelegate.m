@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import "LiveWindowController.h"
 
-@interface AppDelegate ()
+#import <QAVSDK/QAVAppChannel.h>
+
+@interface AppDelegate ()<QAVLogger>
 
 @end
 
@@ -25,10 +27,8 @@
 //    [[[ILiveSDK getInstance] getTIMManager] setEnv:1];
     
     //init sdk
+    [self disableLogPrint];
     [[ILiveSDK getInstance] initSdk:SuixinboSdkAppId accountType:SuixinboAccountType];
-    
-    NSString *ver = [QAVContext getVersion];
-    NSLog(@"ver = %@",ver);
     
     
     _mainWC = [[MainWindowController alloc] initWithWindowNibName:@"MainWindowController"];
@@ -42,5 +42,22 @@
     // Insert code here to tear down your application
 }
 
+- (void)disableLogPrint
+{
+    TIMManager *manager = [[ILiveSDK getInstance] getTIMManager];
+    [manager initLogSettings:NO logPath:[manager getLogPath]];
+    [[ILiveSDK getInstance] setConsoleLogPrint:NO];
+    [QAVAppChannelMgr setExternalLogger:self];
+}
 
+#pragma mark - avsdk日志代理
+- (BOOL)isLogPrint
+{
+    return NO;
+}
+
+- (NSString *)getLogPath
+{
+    return [[TIMManager sharedInstance] getLogPath];
+}
 @end

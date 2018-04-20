@@ -116,9 +116,9 @@
 - (void)rejectToVideo:(id)sender
 {
     [self sendCustomC2CMessage:NO recvId:sender cmd:(ILVLiveIMCmd)AVIMCMD_Multi_Interact_Refuse succ:^{
-        NSLog(@"reject succ");
+
     } fail:^(NSString *module, int errId, NSString *errMsg) {
-        NSLog(@"reject fail");
+
     }];
 }
 

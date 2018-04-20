@@ -110,7 +110,6 @@
         [ws.liveListTableView reloadData];
     } failHandler:^(BaseRequest *request) {
         NSString *errinfo = [NSString stringWithFormat:@"errid=%ld,errmsg=%@",(long)request.response.errorCode,request.response.errorInfo];
-        NSLog(@"regist fail.%@",errinfo);
         [SuixinboAlert tipsWith:errinfo showTo:ws.window];
     }];
     listReq.token = [AppDelegate sharedInstance].token;
@@ -130,12 +129,10 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [ws.recordListView.recordListTableView reloadData];
         });
-        NSLog(@"--->%ld",(long)recordRsp.total);
         if (ws.recordListView.datas.count >= recordRsp.total)
         {
         }
     } failHandler:^(BaseRequest *request) {
-        NSLog(@"fail");
     }];
     recListReq.token = [AppDelegate sharedInstance].token;
     recListReq.type = 0;
@@ -196,7 +193,6 @@
     if ([alert runModal] == NSAlertFirstButtonReturn)
     {
         [[ILiveSDK getInstance] uploadLog:desc.stringValue logDayOffset:[offset intValue] uploadResult:^(int retCode, NSString *retMsg, NSString *logKey) {
-            NSLog(@"--->");
             if (retCode == 0) {
                 [SuixinboAlert alertWith:@"日志上报成功" msg:logKey funBtns:@[@"复制Key",@"取消"] showTo:self.window completeHanler:^(NSModalResponse returnCode) {
                     if (returnCode == NSAlertFirstButtonReturn) {
@@ -243,7 +239,6 @@
 }
 
 - (BOOL)tabView:(NSTabView *)tabView shouldSelectTabViewItem:(NSTabViewItem *)tabViewItem {
-    NSLog(@"");
     return YES;
 }
 

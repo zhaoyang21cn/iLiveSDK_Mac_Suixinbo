@@ -109,7 +109,6 @@
         [AppDelegate sharedInstance].token = responseData.token;
         [[ILiveLoginManager getInstance] iLiveLogin:identifier sig:responseData.userSig succ:^{
             ((NSButton *)sender).enabled = YES;
-            NSLog(@"tillivesdkshow login succ");
             [ws saveLoginParamToLocal:identifier passward:passward];
             if ([ws.delegate respondsToSelector:@selector(loginComplete:code:msg:)]) {
                 [ws.delegate loginComplete:nil code:0 msg:nil];
@@ -124,14 +123,12 @@
             }
             else{
                 NSString *errInfo = [NSString stringWithFormat:@"module=%@,errid=%d,errmsg=%@",module,errId,errMsg];
-                NSLog(@"login fail.%@",errInfo);
                 [SuixinboAlert tipsWith:errInfo showTo:self.window];
             }
         }];
     } failHandler:^(BaseRequest *request) {
         ((NSButton *)sender).enabled = YES;
         NSString *errInfo = [NSString stringWithFormat:@"errid=%ld,errmsg=%@",(long)request.response.errorCode, request.response.errorInfo];
-        NSLog(@"login fail.%@",errInfo);
         [SuixinboAlert tipsWith:errInfo showTo:self.window];
     }];
     sigReq.identifier = identifier;
@@ -152,7 +149,6 @@
     } failHandler:^(BaseRequest *request) {
         ((NSButton *)sender).enabled = YES;
         NSString *errinfo = [NSString stringWithFormat:@"errid=%ld,errmsg=%@",(long)request.response.errorCode,request.response.errorInfo];
-        NSLog(@"regist fail.%@",errinfo);
         [SuixinboAlert tipsWith:errinfo showTo:self.window];
     }];
     registReq.identifier = _accountTF.stringValue;

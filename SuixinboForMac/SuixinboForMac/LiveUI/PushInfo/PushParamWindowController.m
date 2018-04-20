@@ -69,7 +69,6 @@
 }
 
 - (IBAction)onAudioCheckBox:(NSButton *)sender {
-    NSLog(@"---->%ld",(long)sender.state);
 }
 
 - (ILiveEncodeType)getEncodeType:(NSInteger)index {

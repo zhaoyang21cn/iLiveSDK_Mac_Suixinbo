@@ -57,12 +57,10 @@
                     ws.logoutBlock(module,errId,errMsg);
                 }
                 NSString *errinfo = [NSString stringWithFormat:@"module=%@,errid=%ld,errmsg=%@",module,(long)request.response.errorCode,request.response.errorInfo];
-                NSLog(@"regist fail.%@",errinfo);
                 [SuixinboAlert tipsWith:errinfo showTo:[self window]];
             }];
         } failHandler:^(BaseRequest *request) {
             NSString *errinfo = [NSString stringWithFormat:@"errid=%ld,errmsg=%@",(long)request.response.errorCode,request.response.errorInfo];
-            NSLog(@"regist fail.%@",errinfo);
             [SuixinboAlert tipsWith:errinfo showTo:[self window]];
         }];
         logoutReq.token = [AppDelegate sharedInstance].token;
