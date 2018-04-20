@@ -27,15 +27,13 @@ SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 脚本会自动下载SDK，并解压到当前目录，这会消耗几分钟时间，下载好之后在看工程目录中，打开随心播工程可以看到，FrameworksMac下的所有SDK已经变成黑色状态，也就是可用状态了(如果有SDK下载失败的情况，重新运行脚本再下载一次)。
 
 此时可以直接运行了
+
 ![](http://mc.qcloudimg.com/static/img/20c7e51f679f2ee525cc382f6c294e7f/image.png)
 
 ## SDK最近更新说明
 
-###### V1.8.4.13487(2018-4-16)
-
-1、修复日志上报字段appname值错误问题
-
-2、ILiveSDK中默认初始化日志上报SDK
+###### V1.8.4.13487(2018-4-20)
+* 1、更新AVSDK，提供控制台日志打印开关
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
