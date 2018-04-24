@@ -1,10 +1,13 @@
 # iLiveSDK_Mac
 iLiveSDK 提供了账号登录，音视频互动，文本互动等基础功能，顺利的话一天之内即可集成音视频能力。
 
-## SDK获取
-从下载的随心播工程中，获取各个SDK。
+## <a name="#sdk_download">SDK下载</a>
 
-SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
+|SDK|版本号|摘要|下载地址|
+|--|--|--|--|
+|<a name="#avsdk_download">QAVSDK</a>|1.9.8.5.Local|音视频SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/AVSDK_1.9.8.5.Local.zip)
+|IMSDK|2.5.4.10421.10420|即时通讯SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/IMSDK_2.5.4.10421.10420.zip)
+|ILiveSDK|1.8.4.13487|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.8.4.13487.zip)
 
 ## 随心播
 
@@ -19,6 +22,7 @@ SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 由于github有上传文件大小限制，请切记，下载工程之后，需要单独下载SDK。
 
 下载SDK很简单： 
+SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
 
 1、打开终端，输入: cd FrameworksMac目录， 进入随心播FrameworksMac目录 
 
