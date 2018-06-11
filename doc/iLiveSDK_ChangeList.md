@@ -1,5 +1,8 @@
 ## MacOS_iLiveSDK_ChangeList
 
+###### V1.8.4.13565(2018-6-11)
+* 1、修复日志上报引起的ILiveCabstructThread crash问题
+
 ###### V1.8.4.13487(2018-4-20)
 * 1、更新AVSDK，提供控制台日志打印开关（ILiveSDK版本不变）
 
