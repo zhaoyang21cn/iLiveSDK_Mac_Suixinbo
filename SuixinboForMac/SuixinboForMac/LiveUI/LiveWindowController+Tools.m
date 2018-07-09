@@ -120,7 +120,7 @@
     [imMessage addElem:imCustomElem];
     
     if (isOnline) {
-        [[ILiveRoomManager getInstance] sendOnlineGroupMessage:imMessage succ:^{
+        [[ILiveRoomManager getInstance] sendGroupMessage:imMessage succ:^{
             succ ? succ() : nil;
         } failed:^(NSString *module, int errId, NSString *errMsg) {
             fail ? fail(module,errId,errMsg) : nil;

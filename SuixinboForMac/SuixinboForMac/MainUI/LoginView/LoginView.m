@@ -107,6 +107,7 @@
     LoginRequest *sigReq = [[LoginRequest alloc] initWithHandler:^(BaseRequest *request) {
         LoginResponceData *responseData = (LoginResponceData *)request.response.data;
         [AppDelegate sharedInstance].token = responseData.token;
+        [AppDelegate sharedInstance].pwd = passward;
         [[ILiveLoginManager getInstance] iLiveLogin:identifier sig:responseData.userSig succ:^{
             ((NSButton *)sender).enabled = YES;
             [ws saveLoginParamToLocal:identifier passward:passward];

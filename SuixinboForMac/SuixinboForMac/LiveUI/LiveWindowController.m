@@ -68,7 +68,6 @@
         case RoomOptionType_CrateRoom:
         {
             [self createRoom];
-            [self reportRoomInfo];
         }
             break;
         case RoomOptionType_JoinRoom:
@@ -82,30 +81,47 @@
 }
 
 - (void)createRoom {
-    
-    //开发者可以详细了解下option的各个参数配置，这很重要
-    ILiveRoomOption *option = [ILiveRoomOption defaultHostLiveOption];
-    option.controlRole = _item.info.roleName;       //这里填写开发者自己的账号系统下的角色名
-    option.avOption.autoMic = _config.isAutoOpenMic;
-    option.roomDisconnectListener = self;           //房间失去连接的回调通知
-    option.memberStatusListener = self;             //房间内用户的事件回调
-    option.firstFrameListener = self;               //首帧画面监听
-    __weak typeof(self) ws = self;
-    //    _item.info.roomnum = 801234;
-    [[ILiveRoomManager getInstance] createRoom:(int)_item.info.roomnum option:option succ:^{
-        if (option.avOption.autoCamera) {
-            [ws.openCameraBtn setTitle:@"关闭摄像头"];
-        }
-        [ws initUI];
-        
-        [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_VoiceDispose];
-        [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_NetStream];
-        
-    } failed:^(NSString *module, int errId, NSString *errMsg) {
-        [ws onExitLive:nil];
-        NSString *failInfo = [NSString stringWithFormat:@"create room fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
-        [SuixinboAlert tipsWith:failInfo];
+    AuthRequest *authReq = [[AuthRequest alloc] initWithHandler:^(BaseRequest *request) {
+            //开发者可以详细了解下option的各个参数配置，这很重要
+            ILiveRoomOption *option = [ILiveRoomOption defaultHostLiveOption];
+            option.controlRole = _item.info.roleName;       //这里填写开发者自己的账号系统下的角色名
+            option.avOption.autoMic = _config.isAutoOpenMic;
+            option.roomDisconnectListener = self;           //房间失去连接的回调通知
+            option.memberStatusListener = self;             //房间内用户的事件回调
+            option.firstFrameListener = self;               //首帧画面监听
+            
+            AuthResponseData *data = (AuthResponseData *)request.response.data;
+            option.avOption.authBuffer = [data.privMapEncrypt dataUsingEncoding:NSUTF8StringEncoding];
+            
+            [AppDelegate sharedInstance].token = data.token;
+            __weak typeof(self) ws = self;
+            [[ILiveRoomManager getInstance] createRoom:(int)_item.info.roomnum option:option succ:^{
+                if (option.avOption.autoCamera) {
+                    [ws.openCameraBtn setTitle:@"关闭摄像头"];
+                }
+                [ws initUI];
+                
+                [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_VoiceDispose];
+                [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_NetStream];
+                
+                [ws reportRoomInfo];
+                
+            } failed:^(NSString *module, int errId, NSString *errMsg) {
+                [ws onExitLive:nil];
+                NSString *failInfo = [NSString stringWithFormat:@"create room fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
+                [SuixinboAlert tipsWith:failInfo];
+            }];
+    } failHandler:^(BaseRequest *request) {
+        NSString *errLog = [NSString stringWithFormat:@"get authbuff fail. errid=%ld,errmsg=%@",request.response.errorCode,request.response.errorInfo];
+        [SuixinboAlert tipsWith:errLog];
     }];
+    authReq.identifier = [[ILiveLoginManager getInstance] getLoginId];
+    authReq.pwd = [AppDelegate sharedInstance].pwd;
+    authReq.appid = SuixinboSdkAppId;
+    authReq.accountType = SuixinboAccountType;
+    authReq.roomNum = (int)_item.info.roomnum;
+    authReq.privMap = 255;
+    [[WebServiceEngine sharedEngine] asyncRequest:authReq];
 }
 
 - (void)initUI {
@@ -285,21 +301,38 @@
 }
 
 - (void)joinRoom {
-    //参数意义见创建房间
-    //用户成功加入房间后，如果打开摄像头，则会收到onEndpointsUpdateInfo回调，在onEndpointsUpdateInfo回调中，添加上渲染视图即可
     __weak typeof(self) ws = self;
-    ILiveRoomOption *option = [ILiveRoomOption defaultGuestLiveOption];
-    option.controlRole = _item.info.roleName;
-    option.memberStatusListener = self;
-    [[ILiveRoomManager getInstance] joinRoom:(int)_item.info.roomnum option:option succ:^{
-
-        [ws initUI];
-        [ws sendJoinRoomMsg];
-    } failed:^(NSString *module, int errId, NSString *errMsg) {
-        [ws onExitLive:nil];
-        NSString *failInfo = [NSString stringWithFormat:@"join room fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
-        [SuixinboAlert tipsWith:failInfo];
+    AuthRequest *authReq = [[AuthRequest alloc] initWithHandler:^(BaseRequest *request) {
+        //参数意义见创建房间
+        //用户成功加入房间后，如果打开摄像头，则会收到onEndpointsUpdateInfo回调，在onEndpointsUpdateInfo回调中，添加上渲染视图即可
+        
+        ILiveRoomOption *option = [ILiveRoomOption defaultGuestLiveOption];
+        option.controlRole = ws.item.info.roleName;
+        option.memberStatusListener = self;
+        AuthResponseData *data = (AuthResponseData *)request.response.data;
+        option.avOption.authBuffer = [data.privMapEncrypt dataUsingEncoding:NSUTF8StringEncoding];
+        
+        [AppDelegate sharedInstance].token = data.token;
+        
+        [[ILiveRoomManager getInstance] joinRoom:(int)ws.item.info.roomnum option:option succ:^{
+            [ws initUI];
+            [ws sendJoinRoomMsg];
+        } failed:^(NSString *module, int errId, NSString *errMsg) {
+            [ws onExitLive:nil];
+            NSString *failInfo = [NSString stringWithFormat:@"join room fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg];
+            [SuixinboAlert tipsWith:failInfo];
+        }];
+    } failHandler:^(BaseRequest *request) {
+        NSString *errLog = [NSString stringWithFormat:@"get authbuff fail. errid=%ld,errmsg=%@",request.response.errorCode,request.response.errorInfo];
+        [SuixinboAlert tipsWith:errLog];
     }];
+    authReq.identifier = [[ILiveLoginManager getInstance] getLoginId];
+    authReq.pwd = [AppDelegate sharedInstance].pwd;
+    authReq.appid = SuixinboSdkAppId;
+    authReq.accountType = SuixinboAccountType;
+    authReq.roomNum = (int)_item.info.roomnum;
+    authReq.privMap = 255;
+    [[WebServiceEngine sharedEngine] asyncRequest:authReq];
 }
 
 - (void)sendJoinRoomMsg
@@ -614,7 +647,7 @@
         [msg addElem:elem];
         
         __weak typeof(self) ws = self;
-        [[ILiveRoomManager getInstance] sendOnlineGroupMessage:msg succ:^{
+        [[ILiveRoomManager getInstance] sendGroupMessage:msg succ:^{
             [ws insertMessageToUI:[NSString stringWithFormat:@"我: %@",elem.text]];
             ws.messageTF.stringValue = @"";
         } failed:^(NSString *module, int errId, NSString *errMsg) {

@@ -12,12 +12,13 @@
 		9B0BB9361F79050D004AD449 /* ImSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB92E1F79050D004AD449 /* ImSDK.framework */; };
 		9B0BB9371F79050D004AD449 /* QALSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB92F1F79050D004AD449 /* QALSDK.framework */; };
 		9B0BB9381F79050D004AD449 /* TLSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BB9301F79050D004AD449 /* TLSSDK.framework */; };
+		9B19C17420F33720008193A2 /* ILiveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B19C17320F33720008193A2 /* ILiveSDK.framework */; };
 		9B38A3C51F0F910600200FF1 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC0CE851EE81CB8005B42BA /* libstdc++.6.tbd */; };
 		9B48ECD61F2994C8005244FE /* PushParamWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B48ECD41F2994C8005244FE /* PushParamWindowController.m */; };
 		9B48ECD71F2994C8005244FE /* PushParamWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B48ECD51F2994C8005244FE /* PushParamWindowController.xib */; };
 		9B48ECDC1F29E35D005244FE /* ScreenShareWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B48ECDA1F29E35D005244FE /* ScreenShareWindowController.m */; };
 		9B48ECDD1F29E35D005244FE /* ScreenShareWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B48ECDB1F29E35D005244FE /* ScreenShareWindowController.xib */; };
-		9B7907D61FA9CA9B00171AB8 /* ILiveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7907D51FA9CA9B00171AB8 /* ILiveSDK.framework */; };
+		9B4BFA0A20EF5DBA00520D44 /* AuthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BFA0920EF5DBA00520D44 /* AuthRequest.m */; };
 		9B9F09101F00FEB500DF7B40 /* RoomInfoWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F090E1F00FEB500DF7B40 /* RoomInfoWindowController.m */; };
 		9B9F09111F00FEB500DF7B40 /* RoomInfoWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9F090F1F00FEB500DF7B40 /* RoomInfoWindowController.xib */; };
 		9B9F092B1F0124B700DF7B40 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F09201F0124B700DF7B40 /* LoginView.m */; };
@@ -96,13 +97,16 @@
 		9B0BB92E1F79050D004AD449 /* ImSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImSDK.framework; sourceTree = "<group>"; };
 		9B0BB92F1F79050D004AD449 /* QALSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QALSDK.framework; sourceTree = "<group>"; };
 		9B0BB9301F79050D004AD449 /* TLSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TLSSDK.framework; sourceTree = "<group>"; };
+		9B19C16C20F2FA56008193A2 /* libILiveSDKForMac.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libILiveSDKForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B19C17320F33720008193A2 /* ILiveSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ILiveSDK.framework; sourceTree = "<group>"; };
 		9B48ECD31F2994C8005244FE /* PushParamWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushParamWindowController.h; sourceTree = "<group>"; };
 		9B48ECD41F2994C8005244FE /* PushParamWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushParamWindowController.m; sourceTree = "<group>"; };
 		9B48ECD51F2994C8005244FE /* PushParamWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushParamWindowController.xib; sourceTree = "<group>"; };
 		9B48ECD91F29E35D005244FE /* ScreenShareWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenShareWindowController.h; sourceTree = "<group>"; };
 		9B48ECDA1F29E35D005244FE /* ScreenShareWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenShareWindowController.m; sourceTree = "<group>"; };
 		9B48ECDB1F29E35D005244FE /* ScreenShareWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScreenShareWindowController.xib; sourceTree = "<group>"; };
-		9B7907D51FA9CA9B00171AB8 /* ILiveSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ILiveSDK.framework; sourceTree = "<group>"; };
+		9B4BFA0820EF5DBA00520D44 /* AuthRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthRequest.h; sourceTree = "<group>"; };
+		9B4BFA0920EF5DBA00520D44 /* AuthRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthRequest.m; sourceTree = "<group>"; };
 		9B9F090D1F00FEB500DF7B40 /* RoomInfoWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomInfoWindowController.h; sourceTree = "<group>"; };
 		9B9F090E1F00FEB500DF7B40 /* RoomInfoWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomInfoWindowController.m; sourceTree = "<group>"; };
 		9B9F090F1F00FEB500DF7B40 /* RoomInfoWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomInfoWindowController.xib; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 				9B38A3C51F0F910600200FF1 /* libstdc++.6.tbd in Frameworks */,
 				9BEB081B1EE979E900411B30 /* QuartzCore.framework in Frameworks */,
 				9BC0CE8D1EE81CB8005B42BA /* libiconv.tbd in Frameworks */,
+				9B19C17420F33720008193A2 /* ILiveSDK.framework in Frameworks */,
 				9BC0CE921EE81CB8005B42BA /* libz.tbd in Frameworks */,
 				9B0BB9361F79050D004AD449 /* ImSDK.framework in Frameworks */,
 				9B0BB9341F79050D004AD449 /* TILFilterSDK.framework in Frameworks */,
@@ -246,7 +251,6 @@
 				9BFF655B20899DED0050DA13 /* QAVSDK.framework in Frameworks */,
 				9BC0CE8C1EE81CB8005B42BA /* libc++.tbd in Frameworks */,
 				9BC0CE8E1EE81CB8005B42BA /* libresolv.9.tbd in Frameworks */,
-				9B7907D61FA9CA9B00171AB8 /* ILiveSDK.framework in Frameworks */,
 				9B0BB9351F79050D004AD449 /* IMCore.framework in Frameworks */,
 				9BC0CE8A1EE81CB8005B42BA /* Foundation.framework in Frameworks */,
 				9BC0CE8B1EE81CB8005B42BA /* SystemConfiguration.framework in Frameworks */,
@@ -270,8 +274,8 @@
 		9B0BB9291F79050D004AD449 /* ILiveSDK */ = {
 			isa = PBXGroup;
 			children = (
+				9B19C17320F33720008193A2 /* ILiveSDK.framework */,
 				9BF5708E207F49ED008F57C5 /* ILiveLogReport.framework */,
-				9B7907D51FA9CA9B00171AB8 /* ILiveSDK.framework */,
 				9B0BB92B1F79050D004AD449 /* TILFilterSDK.framework */,
 			);
 			path = ILiveSDK;
@@ -438,6 +442,8 @@
 		9BC0CE3D1EE80732005B42BA /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				9B4BFA0820EF5DBA00520D44 /* AuthRequest.h */,
+				9B4BFA0920EF5DBA00520D44 /* AuthRequest.m */,
 				9BC0CE3E1EE80732005B42BA /* CreateRoomRequest.h */,
 				9BC0CE3F1EE80732005B42BA /* CreateRoomRequest.m */,
 				9BC0CE401EE80732005B42BA /* ExitRoomRequest.h */,
@@ -570,6 +576,7 @@
 		9BEB08171EE9791000411B30 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B19C16C20F2FA56008193A2 /* libILiveSDKForMac.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -710,6 +717,7 @@
 				9BC0CE791EE80732005B42BA /* WebServiceEngine.m in Sources */,
 				9BCF68F81EF7845D002E9699 /* CreateRoomWC.m in Sources */,
 				9BC0CE6B1EE80732005B42BA /* HostHeartBeatRequest.m in Sources */,
+				9B4BFA0A20EF5DBA00520D44 /* AuthRequest.m in Sources */,
 				9BC0CE6A1EE80732005B42BA /* GetRoomPlayUrlRequest.m in Sources */,
 				9BC0CE6F1EE80732005B42BA /* LoginRequest.m in Sources */,
 			);

@@ -14,6 +14,7 @@
 + (instancetype)sharedInstance;
 
 @property (nonatomic, strong) NSString *token;
+@property (nonatomic, copy) NSString *pwd;
 @property (nonatomic, strong) MainWindowController *mainWC;
 
 @end
