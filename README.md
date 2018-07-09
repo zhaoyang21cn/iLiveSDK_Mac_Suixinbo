@@ -11,18 +11,18 @@ iLiveSDK 提供了账号登录，音视频互动，文本互动等基础功能�
 
 ## 随心播
 
-1、安装包体验
+### 1、安装包体验
 
-下载的工程中 SuiXinBoForMac_yymmdd.dmg 是可以直接运行的安装包
+下载的工程中 SuiXinBoForMac_x.x.x.dmg 是可以直接运行的安装包
 
-2、源码运行
+### 2、源码运行
 
 ** 下载SDK **
 
 由于github有上传文件大小限制，请切记，下载工程之后，需要单独下载SDK。
 
 下载SDK很简单： 
-SDK目录: iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac
+SDK目录: **iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac** 
 
 1、打开终端，输入: cd FrameworksMac目录， 进入随心播FrameworksMac目录 
 
