@@ -91,7 +91,7 @@
             option.firstFrameListener = self;               //首帧画面监听
             
             AuthResponseData *data = (AuthResponseData *)request.response.data;
-            option.avOption.authBuffer = [data.privMapEncrypt dataUsingEncoding:NSUTF8StringEncoding];
+            option.avOption.privateMapKey = [data.privMapEncrypt dataUsingEncoding:NSUTF8StringEncoding];
             
             [AppDelegate sharedInstance].token = data.token;
             __weak typeof(self) ws = self;
@@ -310,7 +310,7 @@
         option.controlRole = ws.item.info.roleName;
         option.memberStatusListener = self;
         AuthResponseData *data = (AuthResponseData *)request.response.data;
-        option.avOption.authBuffer = [data.privMapEncrypt dataUsingEncoding:NSUTF8StringEncoding];
+        option.avOption.privateMapKey = [data.privMapEncrypt dataUsingEncoding:NSUTF8StringEncoding];
         
         [AppDelegate sharedInstance].token = data.token;
         

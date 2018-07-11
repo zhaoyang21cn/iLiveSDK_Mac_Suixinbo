@@ -23,17 +23,19 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     
-    //0 正式环境， 1 测试环境
+    //0 正式环境， 1 测试环境(外部用户不要使用)
 //    [[[ILiveSDK getInstance] getTIMManager] setEnv:1];
     
+    //禁用控制台日志打印
+//    [self disableLogPrint];
+    
     //init sdk
-    [self disableLogPrint];
+    [[ILiveSDK getInstance] setChannelMode:E_ChannelIMSDK withHost:@""];
+    
     [[ILiveSDK getInstance] initSdk:SuixinboSdkAppId accountType:SuixinboAccountType];
     
     _mainWC = [[MainWindowController alloc] initWithWindowNibName:@"MainWindowController"];
     [_mainWC.window makeKeyAndOrderFront:nil];
-//    [_mainWC.window center];
-//    [_mainWC.window orderFront:nil];
 }
 
 
