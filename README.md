@@ -7,7 +7,7 @@ iLiveSDK 提供了账号登录，音视频互动，文本互动等基础功能�
 |--|--|--|--|
 |<a name="#avsdk_download">QAVSDK</a>|1.9.8.32.Local|音视频SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/AVSDK_1.9.8.32.Local.zip)
 |IMSDK|2.5.4.10421.10420|即时通讯SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/IMSDK_2.5.4.10421.10420.zip)
-|ILiveSDK|1.9.0.13639|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.9.0.13639.zip)
+|ILiveSDK|1.9.0.13800|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.9.0.13800.zip)
 
 ## 随心播
 
@@ -36,11 +36,12 @@ SDK目录: **iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac**
 
 ## SDK最近更新说明
 
-###### V1.9.0.13639(2018-7-9)
-* 1、修改SDK内部默认通道为云上环境(**老用户需要在初始化SDK后将通道设置为IMSDK通道，否则无法与旧版本互通**)
+###### V1.9.0.13800(2018-7-11)
+* 1、修改SDK内部默认通道为云上环境(**老用户需要在 初始化SDK之前 将通道设置为IMSDK通道，否则无法与旧版本互通**)
     `[[ILiveSDK getInstance] setChannelMode:E_ChannelIMSDK withHost:@""];`
 * 2、ILiveSDK增加通道设置接口setChannelMode
 * 3、修复日志上报模块，设置为NSNumber时crash问题
+* 4、将authBuff字段更名为privateMapKey
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
