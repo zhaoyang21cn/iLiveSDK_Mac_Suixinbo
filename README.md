@@ -7,7 +7,7 @@ iLiveSDK 提供了账号登录，音视频互动，文本互动等基础功能�
 |--|--|--|--|
 |<a name="#avsdk_download">QAVSDK</a>|1.9.8.32.Local|音视频SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/AVSDK_1.9.8.32.Local.zip)
 |IMSDK|2.5.4.10421.10420|即时通讯SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/IMSDK_2.5.4.10421.10420.zip)
-|ILiveSDK|1.9.0.13800|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.9.0.13800.zip)
+|ILiveSDK|1.9.2.13903|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.9.2.13903.zip)
 
 ## 随心播
 
@@ -35,6 +35,11 @@ SDK目录: **iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac**
 ![](http://mc.qcloudimg.com/static/img/20c7e51f679f2ee525cc382f6c294e7f/image.png)
 
 ## SDK最近更新说明
+
+###### V1.9.2.13887(2018-8-02)
+* 1、房间和摄像头接口去时序化
+* 2、ILiveSDK添加[统一事件回调](https://github.com/zhaoyang21cn/iLiveSDK_Android_LiveDemo/blob/master/doc/ILiveSDK/EventListener.md)
+* 3、添加成员进出房间(群组)事件通知以及群组解散事件通知
 
 ###### V1.9.0.13800(2018-7-11)
 * 1、修改SDK内部默认通道为云上环境(**老用户需要在 初始化SDK之前 将通道设置为IMSDK通道，否则无法与旧版本互通**)
