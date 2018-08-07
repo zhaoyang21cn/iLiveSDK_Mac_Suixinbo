@@ -36,17 +36,10 @@ SDK目录: **iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac**
 
 ## SDK最近更新说明
 
-###### V1.9.2.13887(2018-8-02)
+###### V1.9.2.13903(2018-8-02)
 * 1、房间和摄像头接口去时序化
 * 2、ILiveSDK添加[统一事件回调](https://github.com/zhaoyang21cn/iLiveSDK_Android_LiveDemo/blob/master/doc/ILiveSDK/EventListener.md)
 * 3、添加成员进出房间(群组)事件通知以及群组解散事件通知
-
-###### V1.9.0.13800(2018-7-11)
-* 1、修改SDK内部默认通道为云上环境(**老用户需要在 初始化SDK之前 将通道设置为IMSDK通道，否则无法与旧版本互通**)
-    `[[ILiveSDK getInstance] setChannelMode:E_ChannelIMSDK withHost:@""];`
-* 2、ILiveSDK增加通道设置接口setChannelMode
-* 3、修复日志上报模块，设置为NSNumber时crash问题
-* 4、将authBuff字段更名为privateMapKey
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
