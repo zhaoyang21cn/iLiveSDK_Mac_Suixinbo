@@ -5,9 +5,9 @@ iLiveSDK 提供了账号登录，音视频互动，文本互动等基础功能�
 
 |SDK|版本号|摘要|下载地址|
 |--|--|--|--|
-|<a name="#avsdk_download">QAVSDK</a>|1.9.8.32.Local|音视频SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/AVSDK_1.9.8.32.Local.zip)
+|<a name="#avsdk_download">QAVSDK</a>|1.9.9.1012.39687|音视频SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/AVSDK_1.9.9.1012.39687.zip)
 |IMSDK|2.5.4.10421.10420|即时通讯SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/IMSDK_2.5.4.10421.10420.zip)
-|ILiveSDK|1.9.2.13903|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.9.2.13903.zip)
+|ILiveSDK|1.9.3.13966|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.9.3.13966.zip)
 
 ## 随心播
 
@@ -35,11 +35,9 @@ SDK目录: **iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac**
 ![](http://mc.qcloudimg.com/static/img/20c7e51f679f2ee525cc382f6c294e7f/image.png)
 
 ## SDK最近更新说明
-
-###### V1.9.2.13903(2018-8-02)
-* 1、房间和摄像头接口去时序化
-* 2、ILiveSDK添加[统一事件回调](https://github.com/zhaoyang21cn/iLiveSDK_Android_LiveDemo/blob/master/doc/ILiveSDK/EventListener.md)
-* 3、添加成员进出房间(群组)事件通知以及群组解散事件通知
+###### V1.9.3.13966(2018-8-23)
+* 1、更新AVSDK到1.9.9.1014，兼容IOS12
+* 2、添加测速类ILiveSpeedTest，可通过startSpeedTest接口进行测试
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
