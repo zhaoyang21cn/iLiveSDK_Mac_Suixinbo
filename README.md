@@ -36,7 +36,7 @@ SDK目录: **iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac**
 
 ## SDK最近更新说明
 ###### V1.9.3.13966(2018-8-23)
-* 1、更新AVSDK到1.9.9.1014，兼容IOS12
+* 1、更新AVSDK到1.9.9.1012
 * 2、添加测速类ILiveSpeedTest，可通过startSpeedTest接口进行测试
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
