@@ -35,9 +35,8 @@ SDK目录: **iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac**
 ![](http://mc.qcloudimg.com/static/img/20c7e51f679f2ee525cc382f6c294e7f/image.png)
 
 ## SDK最近更新说明
-###### V1.9.3.13966(2018-8-23)
-* 1、更新AVSDK到1.9.9.1012
-* 2、添加测速类ILiveSpeedTest，可通过startSpeedTest接口进行测试
+* 1、修改默认群组类型为ChatRoom
+* 2、修改sdk初始化接口- (int)initSdk:(int)appId;去掉accountType字段
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
