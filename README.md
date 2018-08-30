@@ -35,6 +35,7 @@ SDK目录: **iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac**
 ![](http://mc.qcloudimg.com/static/img/20c7e51f679f2ee525cc382f6c294e7f/image.png)
 
 ## SDK最近更新说明
+###### V1.9.4.13999(2018-8-30)
 * 1、修改默认群组类型为ChatRoom
 * 2、修改sdk初始化接口- (int)initSdk:(int)appId;去掉accountType字段
 
