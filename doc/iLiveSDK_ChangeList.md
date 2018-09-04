@@ -1,6 +1,6 @@
 ## MacOS_iLiveSDK_ChangeList
 ###### V1.9.4.13999(2018-8-30)
-* 1、修改默认群组类型为ChatRoom
+* 1、修改默认群组类型为Public
 * 2、修改sdk初始化接口- (int)initSdk:(int)appId;去掉accountType字段
 ###### V1.9.3.13966(2018-8-23)
 * 1、更新AVSDK到1.9.9.1012
