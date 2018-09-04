@@ -1,5 +1,5 @@
 ## MacOS_iLiveSDK_ChangeList
-###### V1.9.4.13999(2018-8-30)
+###### V1.9.4.14015(2018-8-30)
 * 1、修改默认群组类型为Public
 * 2、修改sdk初始化接口- (int)initSdk:(int)appId;去掉accountType字段
 ###### V1.9.3.13966(2018-8-23)
