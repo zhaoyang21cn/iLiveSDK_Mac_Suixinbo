@@ -5,7 +5,7 @@ iLiveSDK 提供了账号登录，音视频互动，文本互动等基础功能�
 
 |SDK|版本号|摘要|下载地址|
 |--|--|--|--|
-|<a name="#avsdk_download">QAVSDK</a>|1.9.9.1020.39998|音视频SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/AVSDK_1.9.9.1020.39998.zip)
+|<a name="#avsdk_download">QAVSDK</a>|1.9.9.1020.39998|音视频SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/AVSDK_1.9.9.1018.39998.zip)
 |IMSDK|2.5.4.10421.10420|即时通讯SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/IMSDK_2.5.4.10421.10420.zip)
 |ILiveSDK|1.9.4.14037|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.9.4.14037.zip)
 
