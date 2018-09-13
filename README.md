@@ -61,3 +61,7 @@ SDK目录: **iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac**
 技术支持QQ群：594923937 207177891
 
 技术需求反馈：https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/issues 
+
+关注公众号"腾讯云视频"，给公众号发关键字"技术支持"，会有专人联系。
+
+![](https://main.qcloudimg.com/raw/769293c3dbc0df8fbfb7d6a7cc904692.jpg)
