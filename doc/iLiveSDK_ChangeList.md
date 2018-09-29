@@ -1,4 +1,9 @@
 ## MacOS_iLiveSDK_ChangeList
+###### V1.9.4.14037(2018-9-6)
+* 1、修改角色不存在时进房失败
+* 2、更新QAVSDK1.9.9.1018
+* 3、修复进IM群组失败的问题
+* 4、修复xcode10下编译失败问题（需要先在工程中删除libstdc++.6库）
 ###### V1.9.4.14015(2018-8-30)
 * 1、修改默认群组类型为Public
 * 2、修改sdk初始化接口- (int)initSdk:(int)appId;去掉accountType字段
