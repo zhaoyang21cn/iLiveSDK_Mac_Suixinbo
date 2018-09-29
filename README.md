@@ -39,6 +39,7 @@ SDK目录: **iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac**
 * 1、修改角色不存在时进房失败
 * 2、更新QAVSDK1.9.9.1018
 * 3、修复进IM群组失败的问题
+* 4、修复xcode10下编译失败问题（需要先在工程中删除libstdc++.6库）
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
