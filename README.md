@@ -6,8 +6,8 @@ iLiveSDK 提供了账号登录，音视频互动，文本互动等基础功能�
 |SDK|版本号|摘要|下载地址|
 |--|--|--|--|
 |<a name="#avsdk_download">QAVSDK</a>|1.9.9.1031.40220|音视频SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/AVSDK_1.9.9.1031.40220.zip)
-|IMSDK|2.7.2.14050.13860|即时通讯SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/IMSDK_MAC_2.7.2.14050.13860.zip)
-|ILiveSDK|1.9.4.14037|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.9.4.14037.zip)
+|IMSDK|2.7.2.14130.14125|即时通讯SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/IMSDK_MAC_2.7.2.14130.14125.zip)
+|ILiveSDK|1.9.4.14133|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.9.4.14133.zip)
 
 ## 随心播
 
@@ -35,11 +35,10 @@ SDK目录: **iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac**
 ![](http://mc.qcloudimg.com/static/img/20c7e51f679f2ee525cc382f6c294e7f/image.png)
 
 ## SDK最近更新说明
-###### V1.9.4.14037(2018-9-6)
-* 1、修改角色不存在时进房失败
-* 2、更新QAVSDK1.9.9.1018
-* 3、修复进IM群组失败的问题
-* 4、修复xcode10下编译失败问题（需要先在工程中删除libstdc++.6库）
+###### V1.9.4.14133(2018-10-30)
+* 1、ilivesdk版本更新支持imsdk V2/V3版本切换(备注：升级ilivesdk版本时，需要同时更新imsdk为最新版)
+* 2、云上环境支持手动推流
+
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
