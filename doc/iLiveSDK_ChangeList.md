@@ -1,4 +1,13 @@
 ## MacOS_iLiveSDK_ChangeList
+###### V1.9.6.14288(2018-12-24)
+* 1、修复本地日志上报配置文件损坏导致无法初始化问题
+* 2、初始化接口增加回调
+* 3、 更新QAVSDK，支持音频优先传输
+* 4、 支持[自定义Spear配置功能](https://github.com/zhaoyang21cn/iLiveSDK_Android_LiveDemo/blob/master/doc/ILiveSDK/def_role.md)
+* 5、 修复canclelistView接口无效的问题
+* 6、 修复超时断开连接退房时，设置option的isReserved属性无效问题
+* 7、 修复相机权限关闭时，调用打开相机回调不正确问题
+
 ###### V1.9.4.14133(2018-10-30)
 * 1、ilivesdk版本更新支持imsdk V2/V3版本切换(备注：升级ilivesdk版本时，需要同时更新imsdk为最新版)
 * 2、云上环境支持手动推流
