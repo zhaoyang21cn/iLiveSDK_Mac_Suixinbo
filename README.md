@@ -7,7 +7,7 @@ iLiveSDK 提供了账号登录，音视频互动，文本互动等基础功能�
 |--|--|--|--|
 |<a name="#avsdk_download">QAVSDK</a>|1.9.9.1067.40570|音视频SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/AVSDK_1.9.9.1031.40220.zip)
 |IMSDK|2.7.2.14234.14235|即时通讯SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/IMSDK_2.7.2.14234.14235.zip)
-|ILiveSDK|1.9.6.14296|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.9.6.14296.zip)
+|ILiveSDK|1.9.6.14321|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.9.6.14321.zip)
 
 ## 随心播
 
@@ -35,14 +35,10 @@ SDK目录: **iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac**
 ![](http://mc.qcloudimg.com/static/img/20c7e51f679f2ee525cc382f6c294e7f/image.png)
 
 ## SDK最近更新说明
-###### V1.9.6.14296(2018-12-24)
-* 1、修复本地日志上报配置文件损坏导致无法初始化问题
-* 2、初始化接口增加回调
-* 3、 更新QAVSDK，支持音频优先传输
-* 4、 支持[自定义Spear配置功能](https://github.com/zhaoyang21cn/iLiveSDK_Android_LiveDemo/blob/master/doc/ILiveSDK/def_role.md)
-* 5、 修复canclelistView接口无效的问题
-* 6、 修复超时断开连接退房时，设置option的isReserved属性无效问题
-* 7、 修复相机权限关闭时，调用打开相机回调不正确问题
+###### V1.9.6.14321(2019-01-03)
+* 1、 ilivesdk封装音视频测试接口
+* 2、 进房option增加enableMuteBag参数，YES时会发送静音包，默认关闭
+
 
 [更多版本更新信息](https://github.com/zhaoyang21cn/iLiveSDK_Mac_Suixinbo/blob/master/doc/iLiveSDK_ChangeList.md)
 
