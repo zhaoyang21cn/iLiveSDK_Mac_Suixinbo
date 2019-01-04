@@ -1,4 +1,7 @@
 ## MacOS_iLiveSDK_ChangeList
+###### V1.9.6.14326(2019-01-04)
+* ilivesdk视频质量数据增加时延参数rtt
+
 ###### V1.9.6.14321(2019-01-03)
 * 1、 ilivesdk封装音视频测试接口
 * 2、 进房option增加enableMuteBag参数，YES时会发送静音包，默认关闭
