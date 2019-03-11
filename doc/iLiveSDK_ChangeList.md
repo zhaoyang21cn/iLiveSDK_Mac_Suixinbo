@@ -1,4 +1,6 @@
 ## MacOS_iLiveSDK_ChangeList
+###### V1.9.6.14326(2019-03-11)
+* 更新QAVSDK版本
 ###### V1.9.6.14326(2019-01-04)
 * ilivesdk视频质量数据增加时延参数rtt
 
