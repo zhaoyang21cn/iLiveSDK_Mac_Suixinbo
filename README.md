@@ -7,7 +7,7 @@ iLiveSDK 提供了账号登录，音视频互动，文本互动等基础功能�
 |--|--|--|--|
 |<a name="#avsdk_download">QAVSDK</a>|1.9.9.1088.40962|音视频SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/AVSDK_1.9.9.1088.40962.zip)
 |IMSDK|2.7.2.14234.14235|即时通讯SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/IMSDK_2.7.2.14234.14235.zip)
-|ILiveSDK|1.9.6.14326|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.9.6.14326.zip)
+|ILiveSDK|1.9.6.14327|互动直播核心业务SDK|[下载](http://dldir1.qq.com/hudongzhibo/ILiveSDK/ILiveSDKMac_1.9.6.14327.zip)
 
 ## 随心播
 
@@ -35,8 +35,9 @@ SDK目录: **iLiveSDK_Mac_Suixinbo/SuixinboForMac/FrameworksMac**
 ![](http://mc.qcloudimg.com/static/img/20c7e51f679f2ee525cc382f6c294e7f/image.png)
 
 ## SDK最近更新说明
-###### V1.9.6.14326(2019-03-11)
-* 更新QAVSDK版本
+###### V1.9.6.14327(2019-09-25)
+* 观众默认权限修改为不具有上行权限
+
 
 
 
